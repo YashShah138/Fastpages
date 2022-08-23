@@ -14,7 +14,7 @@
     
         ,"post1": {
             "title": "Python Kernel Notebook",
-            "content": "print(&#39;Hello World&#39;) . Hello World .",
+            "content": "print(&quot;Welcome to my Python Kernel Notebook!!&quot;) . Welcome to my Python Kernel Notebook!! .",
             "url": "https://yashshah138.github.io/Fastpages/2022/08/22/Python-Notebook.html",
             "relUrl": "/2022/08/22/Python-Notebook.html",
             "date": " • Aug 22, 2022"
@@ -24,8 +24,8 @@
   
     
         ,"post2": {
-            "title": "Title",
-            "content": "",
+            "title": "Java Kernel Notebook",
+            "content": "System.out.println(&quot;Welcome to my Java Kernel Notebook!!&quot;) . Welcome to my Java Kernel Notebook!! .",
             "url": "https://yashshah138.github.io/Fastpages/2022/08/22/Java-Notebook.html",
             "relUrl": "/2022/08/22/Java-Notebook.html",
             "date": " • Aug 22, 2022"
