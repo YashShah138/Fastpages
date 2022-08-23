@@ -6,7 +6,9 @@ categories: [markdown]
 title: First Post to Fastpages
 ---
 
-# Welcome to my website! Posts will be updated and added throughout the trimester as I learn more.
+# Welcome to my website!
+
+## Posts will be updated and added throughout the trimester as I learn more.
 
 ## What is this?
 
