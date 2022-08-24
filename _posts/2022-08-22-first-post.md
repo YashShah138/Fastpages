@@ -4,6 +4,7 @@ layout: post
 description: My First Blog Post!
 categories: [markdown]
 title: First Post to Fastpages
+image: images/First-post.png
 ---
 
 # Welcome to my website!
