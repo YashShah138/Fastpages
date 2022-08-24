@@ -4,7 +4,7 @@ layout: post
 description: Notes on the primitive data types
 categories: [markdown]
 title: Primitive Data Types
-image: images/logo.png
+image: images/DataTypes.png
 ---
 
 # Notes on Primitive Data Types
