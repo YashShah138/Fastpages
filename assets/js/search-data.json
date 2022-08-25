@@ -58,9 +58,20 @@
 
   
   
+      ,"page0": {
+          "title": "Notes",
+          "content": "This is my notes page .",
+          "url": "https://yashshah138.github.io/Fastpages/notes",
+          "relUrl": "/notes",
+          "date": ""
+      }
+      
+  
 
   
-      ,"page1": {
+
+  
+      ,"page2": {
           "title": "About Me",
           "content": "This website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
           "url": "https://yashshah138.github.io/Fastpages/about",
@@ -75,7 +86,7 @@
   
 
   
-      ,"page4": {
+      ,"page5": {
           "title": "",
           "content": "Welcome to my fastpages for AP Computer Science A. Here I will show my notes and learnings from this class. . Blogs .",
           "url": "https://yashshah138.github.io/Fastpages/",
@@ -101,7 +112,7 @@
   
 
   
-      ,"page10": {
+      ,"page11": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://yashshah138.github.io/Fastpages/robots.txt",
