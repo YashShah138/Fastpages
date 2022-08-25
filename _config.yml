@@ -40,6 +40,7 @@ baseurl: "/Fastpages" # the subpath of your site, e.g. "/blog".
 minima:
   social_links:
     github: YashShah138
+    linkedin_username: yash-shah25
 
 # Set this to true to get LaTeX math equation support
 use_math: 
