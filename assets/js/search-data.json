@@ -24,17 +24,6 @@
   
     
         ,"post2": {
-            "title": "First Post to Fastpages",
-            "content": "Welcome to my website! . Posts will be updated and added throughout the trimester as I learn more. . What is this? . This is a website that uses fastpages. This tool allows for easy creation of a website through the use of jupyter notebooks and markdown files. Here I will have my learnings and notes from throughout the trimester. .",
-            "url": "https://yashshah138.github.io/Fastpages/markdown/2022/08/22/first-post.html",
-            "relUrl": "/markdown/2022/08/22/first-post.html",
-            "date": " • Aug 22, 2022"
-        }
-        
-    
-  
-    
-        ,"post3": {
             "title": "Python Kernel Notebook",
             "content": "print(&quot;Welcome to my Python Kernel Notebook!!&quot;) . Welcome to my Python Kernel Notebook!! .",
             "url": "https://yashshah138.github.io/Fastpages/2022/08/22/Python-Notebook.html",
@@ -45,11 +34,22 @@
     
   
     
-        ,"post4": {
+        ,"post3": {
             "title": "Java Kernel Notebook",
             "content": "class HelloWorld { public static void main(String args[]) { System.out.println(&quot;Welcome to my Java Kernel Notebook!!&quot;); } } HelloWorld.main(null) . Welcome to my Java Kernel Notebook!! . System.out.println(&quot;Welcome to my Java Kernel Notebook!!&quot;) . Welcome to my Java Kernel Notebook!! .",
-            "url": "https://yashshah138.github.io/Fastpages/2022/08/21/Java-Notebook.html",
-            "relUrl": "/2022/08/21/Java-Notebook.html",
+            "url": "https://yashshah138.github.io/Fastpages/2022/08/22/Java-Notebook.html",
+            "relUrl": "/2022/08/22/Java-Notebook.html",
+            "date": " • Aug 22, 2022"
+        }
+        
+    
+  
+    
+        ,"post4": {
+            "title": "First Post to Fastpages",
+            "content": "Welcome to my website! . Posts will be updated and added throughout the trimester as I learn more. . What is this? . This is a website that uses fastpages. This tool allows for easy creation of a website through the use of jupyter notebooks and markdown files. Here I will have my learnings and notes from throughout the trimester. .",
+            "url": "https://yashshah138.github.io/Fastpages/markdown/2022/08/21/first-post.html",
+            "relUrl": "/markdown/2022/08/21/first-post.html",
             "date": " • Aug 21, 2022"
         }
         
