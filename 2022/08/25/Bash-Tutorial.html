@@ -4,20 +4,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Fastpages | AP Computer Science A 2022-23</title>
+<title>Bash Kernel Basics Notebook | Fastpages</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Fastpages" />
+<meta property="og:title" content="Bash Kernel Basics Notebook" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="AP Computer Science A 2022-23" />
-<meta property="og:description" content="AP Computer Science A 2022-23" />
-<link rel="canonical" href="https://yashshah138.github.io/Fastpages/" />
-<meta property="og:url" content="https://yashshah138.github.io/Fastpages/" />
+<meta name="description" content="Testing of the Bash kernel" />
+<meta property="og:description" content="Testing of the Bash kernel" />
+<link rel="canonical" href="https://yashshah138.github.io/Fastpages/2022/08/25/Bash-Tutorial.html" />
+<meta property="og:url" content="https://yashshah138.github.io/Fastpages/2022/08/25/Bash-Tutorial.html" />
 <meta property="og:site_name" content="Fastpages" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Fastpages" />
+<meta property="og:image" content="https://yashshah138.github.io/Fastpages/images/Python.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-25T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://yashshah138.github.io/Fastpages/images/Python.png" />
+<meta property="twitter:title" content="Bash Kernel Basics Notebook" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"AP Computer Science A 2022-23","headline":"Fastpages","name":"Fastpages","url":"https://yashshah138.github.io/Fastpages/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-08-25T00:00:00-05:00","datePublished":"2022-08-25T00:00:00-05:00","description":"Testing of the Bash kernel","headline":"Bash Kernel Basics Notebook","image":"https://yashshah138.github.io/Fastpages/images/Python.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://yashshah138.github.io/Fastpages/2022/08/25/Bash-Tutorial.html"},"url":"https://yashshah138.github.io/Fastpages/2022/08/25/Bash-Tutorial.html"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/Fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://yashshah138.github.io/Fastpages/feed.xml" title="Fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/Fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -69,97 +72,77 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home"><h2>Welcome to my fastpages for AP Computer Science A. Here I will show my notes and learnings from this class.</h2>
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
-<h2 id="blogs">Blogs</h2>
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Bash Kernel Basics Notebook</h1><p class="page-description">Testing of the Bash kernel</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-08-25T00:00:00-05:00" itemprop="datePublished">
+        Aug 25, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/YashShah138/Fastpages/tree/master/_notebooks/2022-08-25-Bash-Tutorial.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/Fastpages/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/YashShah138/Fastpages/master?filepath=_notebooks%2F2022-08-25-Bash-Tutorial.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/Fastpages/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/YashShah138/Fastpages/blob/master/_notebooks/2022-08-25-Bash-Tutorial.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/Fastpages/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2FYashShah138%2FFastpages%2Fblob%2Fmaster%2F_notebooks%2F2022-08-25-Bash-Tutorial.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/Fastpages/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul id="toc" class="section-nav">
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-08-25-Bash-Tutorial.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+</div>
 
 
 
-  
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="YashShah138/Fastpages"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/Fastpages/2022/08/25/Bash-Tutorial.html" hidden></a>
+</article>
 
-  <!-- Hide posts if front matter flag hide:true -->
-  
-  
-
-  <!-- Sort posts by rank, then date -->
-  
-  
-  
-
- 
-  
-
-   <!-- Assemble final sorted posts array -->
-  
-  <ul class="post-list"><li><div class="Box box-shadow-medium rounded-1 col-12"><div class="col-4 d-table-cell p-3 v-align-middle">
-        <img class="image-preview " src="/Fastpages/images/Python.png" />
-      </div><div class="col-8 d-table-cell p-3">
-        <h3>
-          <a class="post-link" href="/Fastpages/2022/08/25/Bash-Tutorial.html">
-            Bash Kernel Basics Notebook
-          </a>
-        </h3>
-        <p class="post-meta-description">Testing of the Bash kernel</p>
-          <p class="post-meta">Aug 25, 2022</p>
-      </div>
-  </div></li><li><div class="Box box-shadow-medium rounded-1 col-12"><div class="col-4 d-table-cell p-3 v-align-middle">
-        <img class="image-preview " src="/Fastpages/images/DataTypes.png" />
-      </div><div class="col-8 d-table-cell p-3">
-        <h3>
-          <a class="post-link" href="/Fastpages/markdown/2022/08/23/Primitive-Data-Types.html">
-            Primitive Data Types
-          </a>
-        </h3>
-        <p class="post-meta-description">Notes on the primitive data types</p>
-          <p class="post-meta">Aug 23, 2022</p>
-      </div>
-  </div></li><li><div class="Box box-shadow-medium rounded-1 col-12"><div class="col-4 d-table-cell p-3 v-align-middle">
-        <img class="image-preview " src="/Fastpages/images/Python.png" />
-      </div><div class="col-8 d-table-cell p-3">
-        <h3>
-          <a class="post-link" href="/Fastpages/2022/08/22/Python-Notebook.html">
-            Python Kernel Notebook
-          </a>
-        </h3>
-        <p class="post-meta-description">Testing of the Python kernel</p>
-          <p class="post-meta">Aug 22, 2022</p>
-      </div>
-  </div></li><li><div class="Box box-shadow-medium rounded-1 col-12"><div class="col-4 d-table-cell p-3 v-align-middle">
-        <img class="image-preview " src="/Fastpages/images/First-post.png" />
-      </div><div class="col-8 d-table-cell p-3">
-        <h3>
-          <a class="post-link" href="/Fastpages/markdown/2022/08/22/first-post.html">
-            First Post to Fastpages
-          </a>
-        </h3>
-        <p class="post-meta-description">My First Blog Post!</p>
-          <p class="post-meta">Aug 22, 2022</p>
-      </div>
-  </div></li><li><div class="Box box-shadow-medium rounded-1 col-12"><div class="col-4 d-table-cell p-3 v-align-middle">
-        <img class="image-preview " src="/Fastpages/images/Java.png" />
-      </div><div class="col-8 d-table-cell p-3">
-        <h3>
-          <a class="post-link" href="/Fastpages/2022/08/22/Java-Notebook.html">
-            Java Kernel Notebook
-          </a>
-        </h3>
-        <p class="post-meta-description">Testing of the Java kernel</p>
-          <p class="post-meta">Aug 22, 2022</p>
-      </div>
-  </div></li><li><div class="Box box-shadow-medium rounded-1 col-12"><div class="col-4 d-table-cell p-3 v-align-middle">
-        <img class="image-preview " src="/Fastpages/images/chart-preview.png" />
-      </div><div class="col-8 d-table-cell p-3">
-        <h3>
-          <a class="post-link" href="/Fastpages/jupyter/2020/02/20/test.html">
-            Fastpages Notebook Blog Post
-          </a>
-        </h3>
-        <p class="post-meta-description">A tutorial of fastpages for Jupyter notebooks.</p>
-          <p class="post-meta">Feb 20, 2020</p>
-      </div>
-  </div></li></ul>
-
-    </div>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/Fastpages/"></data>
