@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "Bash Kernel Basics Notebook",
-            "content": "",
+            "content": "echo &quot;List of all files in the root folder:&quot; cd vscode/Fastpages ls echo &quot;&quot; echo &quot;List of all files in the repository including all hidden files:&quot; cd vscode/Fastpages ls -a . List of all files in the root folder: bash: cd: vscode/Fastpages: No such file or directory 2022-05-15-07-21-16.png _config.yml _sass 2022-05-15-07-24-25.png _fastpages_docs _word 2022-05-15-07-25-15.png _includes assets Gemfile _layouts docker-compose.yml LICENSE _notebooks images Makefile _pages index.html README.md _plugins _action_files _posts List of all files in the repository including all hidden files: bash: cd: vscode/Fastpages: No such file or directory . 2022-05-15-07-25-15.png _pages .. Gemfile _plugins .DS_Store LICENSE _posts .devcontainer.json Makefile _sass .git README.md _word .gitattributes _action_files assets .github _config.yml docker-compose.yml .gitignore _fastpages_docs images .vscode _includes index.html 2022-05-15-07-21-16.png _layouts 2022-05-15-07-24-25.png _notebooks . python3 --version .",
             "url": "https://yashshah138.github.io/Fastpages/2022/08/25/Bash-Tutorial.html",
             "relUrl": "/2022/08/25/Bash-Tutorial.html",
             "date": " • Aug 25, 2022"
