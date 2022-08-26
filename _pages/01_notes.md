@@ -4,4 +4,4 @@ permalink: /notes
 title: Notes
 ---
 
-# This is my notes page
+## This is my notes page
