@@ -70,10 +70,10 @@
   
   
       ,"page0": {
-          "title": "Vocab",
-          "content": "This page will be used to display the vocab I learned from AP CSA. .",
-          "url": "https://yashshah138.github.io/Fastpages/vocab",
-          "relUrl": "/vocab",
+          "title": "About Me",
+          "content": "This website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
+          "url": "https://yashshah138.github.io/Fastpages/about",
+          "relUrl": "/about",
           "date": ""
       }
       
@@ -81,10 +81,10 @@
 
   
       ,"page1": {
-          "title": "About Me",
-          "content": "This website is powered by fastpages 1. . a blogging platform that natively supports Jupyter notebooks in addition to other formats. &#8617; . |",
-          "url": "https://yashshah138.github.io/Fastpages/about",
-          "relUrl": "/about",
+          "title": "Vocab",
+          "content": "This page will be used to display the vocab I learned from AP CSA. .",
+          "url": "https://yashshah138.github.io/Fastpages/vocab",
+          "relUrl": "/vocab",
           "date": ""
       }
       
