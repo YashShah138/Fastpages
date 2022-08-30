@@ -13,7 +13,7 @@ title: Extra Credit Notes
 - CSP helped build the technical background of building UI/UX
 - Most of them always had passion for CS and developed that passion through CSA/CSP
 - They realized that CS could help people
-- Be perseverant
+- Persevere through challenges
 - Have to focus on your own path, don't be worried about what other people think/do
 - Transition from HS to college CS was quite drastic
 - Just break things down into little steps
