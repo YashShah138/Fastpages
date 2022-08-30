@@ -4,7 +4,7 @@ layout: post
 description: Notes and Reflection from Alumni Panel
 categories: [Extra Credit]
 title: Extra Credit Notes
-# image: 
+image: images/EC1.png
 ---
 
 ## Notes
