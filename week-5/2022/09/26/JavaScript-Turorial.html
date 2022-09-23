@@ -381,12 +381,13 @@ string: {"name":"Mr M","ghID":"jm1021","classOf":1977,"role":"Teacher"}
 <span class="c1">// define an HTML conversion "method" associated with Classroom</span>
 <span class="nx">Classroom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">_toHtml</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// HTML Style is build using inline structure</span>
-    <span class="kd">var</span> <span class="nx">style</span> <span class="o">=</span> <span class="p">(</span>
-      <span class="s2">"display:inline-block;"</span> <span class="o">+</span>
-      <span class="s2">"border: 2px solid grey;"</span> <span class="o">+</span>
-      <span class="s2">"box-shadow: 0.8em 0.4em 0.4em grey;"</span>
-    <span class="p">);</span>
-  
+<span class="cm">/*        </span>
+<span class="cm">    var style = (</span>
+<span class="cm">      "display:inline-block;" +</span>
+<span class="cm">      "border: 2px solid grey;" +</span>
+<span class="cm">      "box-shadow: 0.8em 0.4em 0.4em grey;"</span>
+<span class="cm">    );</span>
+<span class="cm">*/</span>  
     <span class="c1">// HTML Body of Table is build as a series of concatenations (+=)</span>
     <span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
     <span class="c1">// Heading for Array Columns</span>
@@ -410,13 +411,7 @@ string: {"name":"Mr M","ghID":"jm1021","classOf":1977,"role":"Teacher"}
     <span class="p">}</span>
   
      <span class="c1">// Build and HTML fragment of div, table, table body</span>
-    <span class="k">return</span> <span class="p">(</span>
-      <span class="s2">"&lt;div style='"</span> <span class="o">+</span> <span class="nx">style</span> <span class="o">+</span> <span class="s2">"'&gt;"</span> <span class="o">+</span>
-        <span class="s2">"&lt;table&gt;"</span> <span class="o">+</span>
-          <span class="nx">body</span> <span class="o">+</span>
-        <span class="s2">"&lt;/table&gt;"</span> <span class="o">+</span>
-      <span class="s2">"&lt;/div&gt;"</span>
-    <span class="p">);</span>
+    <span class="k">return</span> <span class="p">(</span><span class="s2">"&lt;div style='"</span> <span class="o">+</span> <span class="s2">"'&gt;"</span> <span class="o">+</span> <span class="s2">"&lt;table&gt;"</span> <span class="o">+</span> <span class="nx">body</span> <span class="o">+</span> <span class="s2">"&lt;/table&gt;"</span> <span class="o">+</span> <span class="s2">"&lt;/div&gt;"</span><span class="p">);</span>
   
   <span class="p">};</span>
   
@@ -450,7 +445,7 @@ object: [object Object]
 
 
 <div class="output_html rendered_html output_subarea output_execute_result">
-<div style="display:inline-block;border: 2px solid grey;box-shadow: 0.8em 0.4em 0.4em grey;"><table>
+<div style=""><table>
 <tr>
 <th><strong>Name</strong></th>
 <th><strong>GitHub ID</strong></th>
