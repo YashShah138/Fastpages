@@ -169,7 +169,6 @@ window.onload = wrap_img;
 
 <span class="c1">// Print Reusing Functions</span>
 <span class="nx">print</span><span class="p">(</span><span class="s2">"RAYJ is the best team!"</span><span class="p">);</span>
-<span class="nx">print</span><span class="p">(</span><span class="s2">"WE LOVE MR. MORTENSEN!!!"</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -186,7 +185,6 @@ window.onload = wrap_img;
 AP CSA IS GREAT!!
 Class of 2022
 RAYJ is the best team!
-WE LOVE MR. MORTENSEN!!!
 </pre>
 </div>
 </div>
@@ -314,16 +312,7 @@ string: {"name":"Mr. M","song":"Stayin' Alive","artist":"Bee Gees","releaseYear"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-javascript"><pre><span></span><span class="c1">// define a function to hold data for a Person</span>
-<span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">song</span><span class="p">,</span> <span class="nx">artist</span><span class="p">,</span> <span class="nx">releaseYear</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">song</span> <span class="o">=</span> <span class="nx">song</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">artist</span> <span class="o">=</span> <span class="nx">artist</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">releaseYear</span> <span class="o">=</span> <span class="nx">releaseYear</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">role</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// define a setter for role in Person data</span>
+<div class=" highlight hl-javascript"><pre><span></span><span class="c1">// define a setter for role in Person data</span>
 <span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">setRole</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">role</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">role</span> <span class="o">=</span> <span class="nx">role</span><span class="p">;</span>
 <span class="p">}</span>
@@ -351,25 +340,25 @@ string: {"name":"Mr. M","song":"Stayin' Alive","artist":"Bee Gees","releaseYear"
     <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">"Yash"</span><span class="p">,</span> <span class="s2">"In Da Club"</span><span class="p">,</span> <span class="s2">"50 Cent"</span><span class="p">,</span> <span class="mf">2003</span><span class="p">)</span>
 <span class="p">];</span>
 
-<span class="c1">// define a classroom and build Classroom objects and json</span>
-<span class="kd">function</span> <span class="nx">Classroom</span><span class="p">(</span><span class="nx">sponsor</span><span class="p">,</span> <span class="nx">teammate</span><span class="p">){</span> <span class="c1">// 1 sponsor, many student</span>
-    <span class="c1">// start Classroom with sponsor</span>
+<span class="c1">// define a Team and build Team objects and json</span>
+<span class="kd">function</span> <span class="nx">Team</span><span class="p">(</span><span class="nx">sponsor</span><span class="p">,</span> <span class="nx">teammate</span><span class="p">){</span> <span class="c1">// 1 sponsor, many student</span>
+    <span class="c1">// start Team with sponsor</span>
     <span class="nx">sponsor</span><span class="p">.</span><span class="nx">setRole</span><span class="p">(</span><span class="s2">"Sponsor"</span><span class="p">);</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">sponsor</span> <span class="o">=</span> <span class="nx">sponsor</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span> <span class="o">=</span> <span class="p">[</span><span class="nx">sponsor</span><span class="p">];</span>
-    <span class="c1">// add each Student to Classroom</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">Team</span> <span class="o">=</span> <span class="p">[</span><span class="nx">sponsor</span><span class="p">];</span>
+    <span class="c1">// add each Student to Team</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">teammate</span> <span class="o">=</span> <span class="nx">teammate</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">teammate</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">teammate</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="nx">teammate</span><span class="p">.</span><span class="nx">setRole</span><span class="p">(</span><span class="s2">"Teammate"</span><span class="p">);</span> <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">teammate</span><span class="p">);</span> <span class="p">});</span>
-    <span class="c1">// build json/string format of Classroom</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">teammate</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">teammate</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="nx">teammate</span><span class="p">.</span><span class="nx">setRole</span><span class="p">(</span><span class="s2">"Teammate"</span><span class="p">);</span> <span class="k">this</span><span class="p">.</span><span class="nx">Team</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">teammate</span><span class="p">);</span> <span class="p">});</span>
+    <span class="c1">// build json/string format of Team</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">json</span> <span class="o">=</span> <span class="p">[];</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">person</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">json</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">toJSON</span><span class="p">()));</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">Team</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">person</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">json</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">toJSON</span><span class="p">()));</span>
 <span class="p">}</span>
 
-<span class="c1">// make a CompSci classroom from formerly defined sponsor and students</span>
-<span class="nx">compsci</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Classroom</span><span class="p">(</span><span class="nx">sponsor</span><span class="p">,</span> <span class="nx">teammate</span><span class="p">);</span>
+<span class="c1">// make a CompSci Team from formerly defined sponsor and students</span>
+<span class="nx">compsci</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Team</span><span class="p">(</span><span class="nx">sponsor</span><span class="p">,</span> <span class="nx">teammate</span><span class="p">);</span>
 
-<span class="c1">// define an HTML conversion "method" associated with Classroom</span>
-<span class="nx">Classroom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">_toHtml</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="c1">// define an HTML conversion "method" associated with Team</span>
+<span class="nx">Team</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">_toHtml</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
     <span class="c1">// HTML Style is build using inline structure</span>
 <span class="cm">/*        </span>
 <span class="cm">    var style = (</span>
@@ -388,16 +377,16 @@ string: {"name":"Mr. M","song":"Stayin' Alive","artist":"Bee Gees","releaseYear"
     <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;strong&gt;"</span> <span class="o">+</span> <span class="s2">"Release Year"</span> <span class="o">+</span> <span class="s2">"&lt;/strong&gt;&lt;/th&gt;"</span><span class="p">;</span>
     <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;strong&gt;"</span> <span class="o">+</span> <span class="s2">"Role"</span> <span class="o">+</span> <span class="s2">"&lt;/strong&gt;&lt;/th&gt;"</span><span class="p">;</span>
     <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;/tr&gt;"</span><span class="p">;</span>
-    <span class="c1">// Data of Array, iterate through each row of compsci.classroom </span>
-    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">row</span> <span class="k">in</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Data of Array, iterate through each row of compsci.Team </span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">row</span> <span class="k">in</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">Team</span><span class="p">)</span> <span class="p">{</span>
       <span class="c1">// tr for each row, a new line</span>
       <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;tr&gt;"</span><span class="p">;</span>
       <span class="c1">// td for each column of data</span>
-      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
-      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">song</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
-      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">artist</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
-      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">releaseYear</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
-      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">role</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">Team</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">Team</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">song</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">Team</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">artist</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">Team</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">releaseYear</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">Team</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">role</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
       <span class="c1">// tr to end line</span>
       <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;tr&gt;"</span><span class="p">;</span>
     <span class="p">}</span>
