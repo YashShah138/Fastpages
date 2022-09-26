@@ -81,7 +81,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      4 min read
     
 </span></p>
 
@@ -252,10 +252,11 @@ object: 1,2,3
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-javascript"><pre><span></span><span class="c1">// define a function to hold data for a Person</span>
-<span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">classOf</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">song</span><span class="p">,</span> <span class="nx">artist</span><span class="p">,</span> <span class="nx">releaseYear</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">classOf</span> <span class="o">=</span> <span class="nx">classOf</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">song</span> <span class="o">=</span> <span class="nx">song</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">artist</span> <span class="o">=</span> <span class="nx">artist</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">releaseYear</span> <span class="o">=</span> <span class="nx">releaseYear</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">role</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -266,20 +267,20 @@ object: 1,2,3
 
 <span class="c1">// define a JSON conversion "method" associated with Person</span>
 <span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toJSON</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">,</span> <span class="nx">classOf</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">classOf</span><span class="p">,</span> <span class="nx">role</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">role</span><span class="p">};</span>
+    <span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">song</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">song</span><span class="p">,</span> <span class="nx">artist</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">artist</span><span class="p">,</span> <span class="nx">releaseYear</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">releaseYear</span><span class="p">,</span> <span class="nx">role</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">role</span><span class="p">};</span>
     <span class="kr">const</span> <span class="nx">json</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>  <span class="c1">// json/string is useful when passing data on internet</span>
     <span class="k">return</span> <span class="nx">json</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="c1">// make a new Person and assign to variable teacher</span>
-<span class="kd">var</span> <span class="nx">teacher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">"Mr M"</span><span class="p">,</span> <span class="s2">"jm1021"</span><span class="p">,</span> <span class="mf">1977</span><span class="p">);</span>  <span class="c1">// object type is easy to work with in JavaScript</span>
-<span class="nx">printType</span><span class="p">(</span><span class="nx">teacher</span><span class="p">);</span>  <span class="c1">// before role</span>
-<span class="nx">printType</span><span class="p">(</span><span class="nx">teacher</span><span class="p">.</span><span class="nx">toJSON</span><span class="p">());</span>  <span class="c1">// ok to do this even though role is not yet defined</span>
+<span class="c1">// make a new Person and assign to variable sponsor</span>
+<span class="kd">var</span> <span class="nx">sponsor</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">"Mr. M"</span><span class="p">,</span> <span class="s2">"Stayin' Alive"</span><span class="p">,</span> <span class="s2">"Bee Gees"</span><span class="p">,</span> <span class="mf">1977</span><span class="p">);</span>  <span class="c1">// object type is easy to work with in JavaScript</span>
+<span class="nx">printType</span><span class="p">(</span><span class="nx">sponsor</span><span class="p">);</span>  <span class="c1">// before role</span>
+<span class="nx">printType</span><span class="p">(</span><span class="nx">sponsor</span><span class="p">.</span><span class="nx">toJSON</span><span class="p">());</span>  <span class="c1">// ok to do this even though role is not yet defined</span>
 
-<span class="c1">// output of Object and JSON/string associated with Teacher</span>
-<span class="nx">teacher</span><span class="p">.</span><span class="nx">setRole</span><span class="p">(</span><span class="s2">"Teacher"</span><span class="p">);</span>   <span class="c1">// set the role</span>
-<span class="nx">printType</span><span class="p">(</span><span class="nx">teacher</span><span class="p">);</span> 
-<span class="nx">printType</span><span class="p">(</span><span class="nx">teacher</span><span class="p">.</span><span class="nx">toJSON</span><span class="p">());</span>
+<span class="c1">// output of Object and JSON/string associated with sponsor</span>
+<span class="nx">sponsor</span><span class="p">.</span><span class="nx">setRole</span><span class="p">(</span><span class="s2">"Sponsor"</span><span class="p">);</span>   <span class="c1">// set the role</span>
+<span class="nx">printType</span><span class="p">(</span><span class="nx">sponsor</span><span class="p">);</span> 
+<span class="nx">printType</span><span class="p">(</span><span class="nx">sponsor</span><span class="p">.</span><span class="nx">toJSON</span><span class="p">());</span>
 </pre></div>
 
     </div>
@@ -293,9 +294,9 @@ object: 1,2,3
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>object: [object Object]
-string: {"name":"Mr M","ghID":"jm1021","classOf":1977,"role":""}
+string: {"name":"Mr. M","song":"Stayin' Alive","artist":"Bee Gees","releaseYear":1977,"role":""}
 object: [object Object]
-string: {"name":"Mr M","ghID":"jm1021","classOf":1977,"role":"Teacher"}
+string: {"name":"Mr. M","song":"Stayin' Alive","artist":"Bee Gees","releaseYear":1977,"role":"Sponsor"}
 </pre>
 </div>
 </div>
@@ -314,9 +315,11 @@ string: {"name":"Mr M","ghID":"jm1021","classOf":1977,"role":"Teacher"}
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-javascript"><pre><span></span><span class="c1">// define a function to hold data for a Person</span>
-<span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">classOf</span><span class="p">)</span> <span class="p">{</span>
+<span class="kd">function</span> <span class="nx">Person</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">song</span><span class="p">,</span> <span class="nx">artist</span><span class="p">,</span> <span class="nx">releaseYear</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">song</span> <span class="o">=</span> <span class="nx">song</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">artist</span> <span class="o">=</span> <span class="nx">artist</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">releaseYear</span> <span class="o">=</span> <span class="nx">releaseYear</span><span class="p">;</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">role</span> <span class="o">=</span> <span class="s2">""</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -327,43 +330,43 @@ string: {"name":"Mr M","ghID":"jm1021","classOf":1977,"role":"Teacher"}
 
 <span class="c1">// define a JSON conversion "method" associated with Person</span>
 <span class="nx">Person</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toJSON</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">age</span><span class="p">,</span> <span class="nx">classOf</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">classOf</span><span class="p">,</span> <span class="nx">role</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">role</span><span class="p">};</span>
+    <span class="kr">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span> <span class="nx">song</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">song</span><span class="p">,</span> <span class="nx">artist</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">artist</span><span class="p">,</span> <span class="nx">releaseYear</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">releaseYear</span><span class="p">,</span> <span class="nx">role</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">role</span><span class="p">};</span>
     <span class="kr">const</span> <span class="nx">json</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>  <span class="c1">// json/string is useful when passing data on internet</span>
     <span class="k">return</span> <span class="nx">json</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="c1">// make a new Person and assign to variable teacher</span>
-<span class="kd">var</span> <span class="nx">teacher</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">"Mr M"</span><span class="p">,</span> <span class="mf">63</span><span class="p">);</span>  <span class="c1">// object type is easy to work with in JavaScript</span>
-<span class="nx">printType</span><span class="p">(</span><span class="nx">teacher</span><span class="p">.</span><span class="nx">toJSON</span><span class="p">());</span>  <span class="c1">// ok to do this even though role is not yet defined</span>
+<span class="c1">// make a new Person and assign to variable sponsor</span>
+<span class="kd">var</span> <span class="nx">sponsor</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">"Mr. M"</span><span class="p">,</span> <span class="s2">"Stayin' Alive"</span><span class="p">,</span> <span class="s2">"Bee Gees"</span><span class="p">,</span> <span class="mf">1977</span><span class="p">);</span>  <span class="c1">// object type is easy to work with in JavaScript</span>
+<span class="nx">printType</span><span class="p">(</span><span class="nx">sponsor</span><span class="p">.</span><span class="nx">toJSON</span><span class="p">());</span>  <span class="c1">// ok to do this even though role is not yet defined</span>
 
-<span class="c1">// output of Object and JSON/string associated with Teacher</span>
-<span class="nx">teacher</span><span class="p">.</span><span class="nx">setRole</span><span class="p">(</span><span class="s2">"Teacher"</span><span class="p">);</span>   <span class="c1">// set the role</span>
-<span class="nx">printType</span><span class="p">(</span><span class="nx">teacher</span><span class="p">.</span><span class="nx">toJSON</span><span class="p">());</span>
+<span class="c1">// output of Object and JSON/string associated with sponsor</span>
+<span class="nx">sponsor</span><span class="p">.</span><span class="nx">setRole</span><span class="p">(</span><span class="s2">"Sponsor"</span><span class="p">);</span>   <span class="c1">// set the role</span>
+<span class="nx">printType</span><span class="p">(</span><span class="nx">sponsor</span><span class="p">.</span><span class="nx">toJSON</span><span class="p">());</span>
 
 <span class="c1">// define a student Array of Person(s)</span>
-<span class="kd">var</span> <span class="nx">students</span> <span class="o">=</span> <span class="p">[</span> 
-    <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">"Rithwikh"</span><span class="p">,</span> <span class="mf">17</span><span class="p">),</span>
-    <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">"Aidan"</span><span class="p">,</span> <span class="mf">16</span><span class="p">),</span>
-    <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">"Jun"</span><span class="p">,</span> <span class="mf">17</span><span class="p">),</span>
-    <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">"Yash"</span><span class="p">,</span> <span class="mf">17</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">teammate</span> <span class="o">=</span> <span class="p">[</span> 
+    <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">"Rithwikh"</span><span class="p">,</span> <span class="s2">"Drop It Like It's Hot"</span><span class="p">,</span> <span class="s2">"Snoop Dogg"</span><span class="p">,</span> <span class="mf">2004</span><span class="p">),</span>
+    <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">"Aidan"</span><span class="p">,</span> <span class="s2">"Ms. Jackson"</span><span class="p">,</span> <span class="s2">"OutKast"</span><span class="p">,</span> <span class="mf">2000</span><span class="p">),</span>
+    <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">"Jun"</span><span class="p">,</span> <span class="s2">"Ignition"</span><span class="p">,</span> <span class="s2">"R. Kelly"</span><span class="p">,</span> <span class="mf">2002</span><span class="p">),</span>
+    <span class="k">new</span> <span class="nx">Person</span><span class="p">(</span><span class="s2">"Yash"</span><span class="p">,</span> <span class="s2">"In Da Club"</span><span class="p">,</span> <span class="s2">"50 Cent"</span><span class="p">,</span> <span class="mf">2003</span><span class="p">)</span>
 <span class="p">];</span>
 
 <span class="c1">// define a classroom and build Classroom objects and json</span>
-<span class="kd">function</span> <span class="nx">Classroom</span><span class="p">(</span><span class="nx">teacher</span><span class="p">,</span> <span class="nx">students</span><span class="p">){</span> <span class="c1">// 1 teacher, many student</span>
-    <span class="c1">// start Classroom with Teacher</span>
-    <span class="nx">teacher</span><span class="p">.</span><span class="nx">setRole</span><span class="p">(</span><span class="s2">"Teacher"</span><span class="p">);</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">teacher</span> <span class="o">=</span> <span class="nx">teacher</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span> <span class="o">=</span> <span class="p">[</span><span class="nx">teacher</span><span class="p">];</span>
+<span class="kd">function</span> <span class="nx">Classroom</span><span class="p">(</span><span class="nx">sponsor</span><span class="p">,</span> <span class="nx">teammate</span><span class="p">){</span> <span class="c1">// 1 sponsor, many student</span>
+    <span class="c1">// start Classroom with sponsor</span>
+    <span class="nx">sponsor</span><span class="p">.</span><span class="nx">setRole</span><span class="p">(</span><span class="s2">"Sponsor"</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">sponsor</span> <span class="o">=</span> <span class="nx">sponsor</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span> <span class="o">=</span> <span class="p">[</span><span class="nx">sponsor</span><span class="p">];</span>
     <span class="c1">// add each Student to Classroom</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">students</span> <span class="o">=</span> <span class="nx">students</span><span class="p">;</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">students</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">student</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="nx">student</span><span class="p">.</span><span class="nx">setRole</span><span class="p">(</span><span class="s2">"Student"</span><span class="p">);</span> <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">student</span><span class="p">);</span> <span class="p">});</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">teammate</span> <span class="o">=</span> <span class="nx">teammate</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">teammate</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">teammate</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="nx">teammate</span><span class="p">.</span><span class="nx">setRole</span><span class="p">(</span><span class="s2">"Teammate"</span><span class="p">);</span> <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">teammate</span><span class="p">);</span> <span class="p">});</span>
     <span class="c1">// build json/string format of Classroom</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">json</span> <span class="o">=</span> <span class="p">[];</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">classroom</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">person</span> <span class="p">=&gt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">json</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">person</span><span class="p">.</span><span class="nx">toJSON</span><span class="p">()));</span>
 <span class="p">}</span>
 
-<span class="c1">// make a CompSci classroom from formerly defined teacher and students</span>
-<span class="nx">compsci</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Classroom</span><span class="p">(</span><span class="nx">teacher</span><span class="p">,</span> <span class="nx">students</span><span class="p">);</span>
+<span class="c1">// make a CompSci classroom from formerly defined sponsor and students</span>
+<span class="nx">compsci</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Classroom</span><span class="p">(</span><span class="nx">sponsor</span><span class="p">,</span> <span class="nx">teammate</span><span class="p">);</span>
 
 <span class="c1">// define an HTML conversion "method" associated with Classroom</span>
 <span class="nx">Classroom</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">_toHtml</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -381,6 +384,8 @@ string: {"name":"Mr M","ghID":"jm1021","classOf":1977,"role":"Teacher"}
     <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;tr&gt;"</span><span class="p">;</span>
     <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;strong&gt;"</span> <span class="o">+</span> <span class="s2">"Name"</span> <span class="o">+</span> <span class="s2">"&lt;/strong&gt;&lt;/th&gt;"</span><span class="p">;</span>
     <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;strong&gt;"</span> <span class="o">+</span> <span class="s2">"Age"</span> <span class="o">+</span> <span class="s2">"&lt;/strong&gt;&lt;/th&gt;"</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;strong&gt;"</span> <span class="o">+</span> <span class="s2">"Artist"</span> <span class="o">+</span> <span class="s2">"&lt;/strong&gt;&lt;/th&gt;"</span><span class="p">;</span>
+    <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;strong&gt;"</span> <span class="o">+</span> <span class="s2">"Release Year"</span> <span class="o">+</span> <span class="s2">"&lt;/strong&gt;&lt;/th&gt;"</span><span class="p">;</span>
     <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;th&gt;&lt;strong&gt;"</span> <span class="o">+</span> <span class="s2">"Role"</span> <span class="o">+</span> <span class="s2">"&lt;/strong&gt;&lt;/th&gt;"</span><span class="p">;</span>
     <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;/tr&gt;"</span><span class="p">;</span>
     <span class="c1">// Data of Array, iterate through each row of compsci.classroom </span>
@@ -389,13 +394,15 @@ string: {"name":"Mr M","ghID":"jm1021","classOf":1977,"role":"Teacher"}
       <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;tr&gt;"</span><span class="p">;</span>
       <span class="c1">// td for each column of data</span>
       <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">name</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
-      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">age</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">song</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">artist</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
+      <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">releaseYear</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
       <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;td&gt;"</span> <span class="o">+</span> <span class="nx">compsci</span><span class="p">.</span><span class="nx">classroom</span><span class="p">[</span><span class="nx">row</span><span class="p">].</span><span class="nx">role</span> <span class="o">+</span> <span class="s2">"&lt;/td&gt;"</span><span class="p">;</span>
       <span class="c1">// tr to end line</span>
       <span class="nx">body</span> <span class="o">+=</span> <span class="s2">"&lt;tr&gt;"</span><span class="p">;</span>
     <span class="p">}</span>
-  
-     <span class="c1">// Build and HTML fragment of div, table, table body</span>
+
+    <span class="c1">// Build and HTML fragment of div, table, table body</span>
     <span class="k">return</span> <span class="p">(</span><span class="s2">"&lt;div style='"</span> <span class="o">+</span> <span class="s2">"'&gt;"</span> <span class="o">+</span> <span class="s2">"&lt;table&gt;"</span> <span class="o">+</span> <span class="nx">body</span> <span class="o">+</span> <span class="s2">"&lt;/table&gt;"</span> <span class="o">+</span> <span class="s2">"&lt;/div&gt;"</span><span class="p">);</span>
   
   <span class="p">};</span>
@@ -414,8 +421,8 @@ string: {"name":"Mr M","ghID":"jm1021","classOf":1977,"role":"Teacher"}
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>string: {"name":"Mr M","age":63,"role":""}
-string: {"name":"Mr M","age":63,"role":"Teacher"}
+<pre>string: {"name":"Mr. M","song":"Stayin' Alive","artist":"Bee Gees","releaseYear":1977,"role":""}
+string: {"name":"Mr. M","song":"Stayin' Alive","artist":"Bee Gees","releaseYear":1977,"role":"Sponsor"}
 </pre>
 </div>
 </div>
@@ -428,36 +435,48 @@ string: {"name":"Mr M","age":63,"role":"Teacher"}
 <tr>
 <th><strong>Name</strong></th>
 <th><strong>Age</strong></th>
+<th><strong>Artist</strong></th>
+<th><strong>Release Year</strong></th>
 <th><strong>Role</strong></th>
 </tr>
 <tr>
-<td>Mr M</td>
-<td>63</td>
-<td>Teacher</td>
+<td>Mr. M</td>
+<td>Stayin' Alive</td>
+<td>Bee Gees</td>
+<td>1977</td>
+<td>Sponsor</td>
 </tr>
 <tr></tr>
 <tr>
 <td>Rithwikh</td>
-<td>17</td>
-<td>Student</td>
+<td>Drop It Like It's Hot</td>
+<td>Snoop Dogg</td>
+<td>2004</td>
+<td>Teammate</td>
 </tr>
 <tr></tr>
 <tr>
 <td>Aidan</td>
-<td>16</td>
-<td>Student</td>
+<td>Ms. Jackson</td>
+<td>OutKast</td>
+<td>2000</td>
+<td>Teammate</td>
 </tr>
 <tr></tr>
 <tr>
 <td>Jun</td>
-<td>17</td>
-<td>Student</td>
+<td>Ignition</td>
+<td>R. Kelly</td>
+<td>2002</td>
+<td>Teammate</td>
 </tr>
 <tr></tr>
 <tr>
 <td>Yash</td>
-<td>17</td>
-<td>Student</td>
+<td>In Da Club</td>
+<td>50 Cent</td>
+<td>2003</td>
+<td>Teammate</td>
 </tr>
 <tr>&lt;/table&gt;&lt;/div&gt;
 &lt;/div&gt;
