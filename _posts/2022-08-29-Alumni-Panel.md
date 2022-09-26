@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: Notes and Reflection from Alumni Panel
-categories: [Extra Credit]
+categories: [Extras]
 title: Extra Credit Notes
 ---
 
