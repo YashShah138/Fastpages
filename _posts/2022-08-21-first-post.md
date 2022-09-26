@@ -2,7 +2,7 @@
 toc: true
 layout: post
 description: My First Blog Post!
-categories: [Week 0]
+categories: [Week-0]
 title: First Post to Fastpages
 image: images/First-post.png
 ---
