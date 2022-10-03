@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>APIs | Yash’s Fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="APIs" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Displaying Data From an API" />
+<meta property="og:description" content="Displaying Data From an API" />
+<link rel="canonical" href="https://yashshah138.github.io/Fastpages/week-6/2022/10/03/APIs.html" />
+<meta property="og:url" content="https://yashshah138.github.io/Fastpages/week-6/2022/10/03/APIs.html" />
+<meta property="og:site_name" content="Yash’s Fastpages" />
+<meta property="og:image" content="https://yashshah138.github.io/Fastpages/images/API.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-10-03T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://yashshah138.github.io/Fastpages/images/API.png" />
+<meta property="twitter:title" content="APIs" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-10-03T00:00:00-05:00","datePublished":"2022-10-03T00:00:00-05:00","description":"Displaying Data From an API","headline":"APIs","image":"https://yashshah138.github.io/Fastpages/images/API.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://yashshah138.github.io/Fastpages/week-6/2022/10/03/APIs.html"},"url":"https://yashshah138.github.io/Fastpages/week-6/2022/10/03/APIs.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/Fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://yashshah138.github.io/Fastpages/feed.xml" title="Yash's Fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/Fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/Fastpages/">Yash&#39;s Fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/Fastpages/search/">Search</a><a class="page-link" href="/Fastpages/about">About Me</a><a class="page-link" href="/Fastpages/notes">College Board</a><a class="page-link" href="/Fastpages/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">APIs</h1><p class="page-description">Displaying Data From an API</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-10-03T00:00:00-05:00" itemprop="datePublished">
+        Oct 3, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      1 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/Fastpages/categories/#Week-6">Week-6</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-justify-center">
+          <div class="px-2">
+
+    <a href="https://github.com/YashShah138/Fastpages/tree/master/_notebooks/2022-10-03-APIs.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/Fastpages/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/YashShah138/Fastpages/master?filepath=_notebooks%2F2022-10-03-APIs.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/Fastpages/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/YashShah138/Fastpages/blob/master/_notebooks/2022-10-03-APIs.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/Fastpages/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+          <div class="px-2">
+  <a href="https://deepnote.com/launch?url=https%3A%2F%2Fgithub.com%2FYashShah138%2FFastpages%2Fblob%2Fmaster%2F_notebooks%2F2022-10-03-APIs.ipynb" target="_blank">
+      <img class="notebook-badge-image" src="/Fastpages/assets/badges/deepnote.svg" alt="Launch in Deepnote"/>
+  </a>
+</div>
+
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2022-10-03-APIs.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.net.URI</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.net.http.HttpClient</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.net.http.HttpRequest</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.net.http.HttpResponse</span><span class="p">;</span>
+
+<span class="c1">// RapidAPI header  https://rapidapi.com/dariuxmx/api/formula-1-standings/</span>
+<span class="n">HttpRequest</span> <span class="n">request</span> <span class="o">=</span> <span class="n">HttpRequest</span><span class="p">.</span><span class="na">newBuilder</span><span class="p">()</span>
+		<span class="p">.</span><span class="na">uri</span><span class="p">(</span><span class="n">URI</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="s">&quot;https://formula-1-standings.p.rapidapi.com/races&quot;</span><span class="p">))</span>
+		<span class="p">.</span><span class="na">header</span><span class="p">(</span><span class="s">&quot;X-RapidAPI-Key&quot;</span><span class="p">,</span> <span class="s">&quot;80e73128e0mshda8c95123266391p176951jsnbc06ff234f92&quot;</span><span class="p">)</span>
+		<span class="p">.</span><span class="na">header</span><span class="p">(</span><span class="s">&quot;X-RapidAPI-Host&quot;</span><span class="p">,</span> <span class="s">&quot;formula-1-standings.p.rapidapi.com&quot;</span><span class="p">)</span>
+		<span class="p">.</span><span class="na">method</span><span class="p">(</span><span class="s">&quot;GET&quot;</span><span class="p">,</span> <span class="n">HttpRequest</span><span class="p">.</span><span class="na">BodyPublishers</span><span class="p">.</span><span class="na">noBody</span><span class="p">())</span>
+		<span class="p">.</span><span class="na">build</span><span class="p">();</span>
+
+<span class="c1">// RapidAPI request and response</span>
+<span class="n">HttpResponse</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">response</span> <span class="o">=</span> <span class="n">HttpClient</span><span class="p">.</span><span class="na">newHttpClient</span><span class="p">().</span><span class="na">send</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">HttpResponse</span><span class="p">.</span><span class="na">BodyHandlers</span><span class="p">.</span><span class="na">ofString</span><span class="p">());</span>
+
+<span class="c1">// RapidAPI Body</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="na">body</span><span class="p">());</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#34;results&#34;:[{&#34;race_name&#34;:&#34;Pre-Season Testing 2022&#34;,&#34;race_date&#34;:&#34;10 – 12 March 2022&#34;,&#34;race_location&#34;:&#34;Bahrain International Circuit, Bahrain&#34;},{&#34;race_name&#34;:&#34;Bahrain Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;18 – 20 March 2022&#34;,&#34;race_location&#34;:&#34;Bahrain International Circuit, Bahrain&#34;},{&#34;race_name&#34;:&#34;Saudi Arabian Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;25 – 27 March 2022&#34;,&#34;race_location&#34;:&#34;Jeddah Corniche Circuit, Saudi Arabia&#34;},{&#34;race_name&#34;:&#34;Australian Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;8 – 10 April 2022&#34;,&#34;race_location&#34;:&#34;Melbourne Grand Prix Circuit, Australia&#34;},{&#34;race_name&#34;:&#34;Emilia Romagna Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;22 – 24 April 2022&#34;,&#34;race_location&#34;:&#34;Autodromo Enzo e Dino Ferrari, Italy&#34;},{&#34;race_name&#34;:&#34;Miami Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;6 – 8 May 2022&#34;,&#34;race_location&#34;:&#34;Miami International Autodrome, United States&#34;},{&#34;race_name&#34;:&#34;Spanish Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;20 – 22 May 2022&#34;,&#34;race_location&#34;:&#34;Circuit de Barcelona-Catalunya, Spain&#34;},{&#34;race_name&#34;:&#34;Monaco Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;27 – 29 May 2022&#34;,&#34;race_location&#34;:&#34;Circuit de Monaco, Monaco&#34;},{&#34;race_name&#34;:&#34;Azerbaijan Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;10 – 12 June 2022&#34;,&#34;race_location&#34;:&#34;Baku City Circuit, Azerbaijan&#34;},{&#34;race_name&#34;:&#34;Canadian Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;17 – 19 June 2022&#34;,&#34;race_location&#34;:&#34;Circuit Gilles Villeneuve, Canada&#34;},{&#34;race_name&#34;:&#34;British Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;1 – 3 July 2022&#34;,&#34;race_location&#34;:&#34;Silverstone Circuit, United Kingdom&#34;},{&#34;race_name&#34;:&#34;Austrian Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;8 – 10 July 2022&#34;,&#34;race_location&#34;:&#34;Red Bull Ring, Austria&#34;},{&#34;race_name&#34;:&#34;French Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;22 – 24 July 2022&#34;,&#34;race_location&#34;:&#34;Circuit Paul Ricard, France&#34;},{&#34;race_name&#34;:&#34;Hungarian Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;29 – 31 July 2022&#34;,&#34;race_location&#34;:&#34;Hungaroring, Hungary&#34;},{&#34;race_name&#34;:&#34;Belgian Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;26 – 28 August 2022&#34;,&#34;race_location&#34;:&#34;Circuit de Spa-Francorchamps, Belgium&#34;},{&#34;race_name&#34;:&#34;Dutch Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;2 – 4 September 2022&#34;,&#34;race_location&#34;:&#34;Circuit Zandvoort, Netherlands&#34;},{&#34;race_name&#34;:&#34;Italian Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;9 – 11 September 2022&#34;,&#34;race_location&#34;:&#34;Autodromo Nazionale Monza, Italy&#34;},{&#34;race_name&#34;:&#34;Singapore Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;30 September – 2 October 2022&#34;,&#34;race_location&#34;:&#34;Marina Bay Street Circuit, Singapore&#34;},{&#34;race_name&#34;:&#34;Japanese Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;7 – 9 October 2022&#34;,&#34;race_location&#34;:&#34;Suzuka International Racing Course, Japan&#34;},{&#34;race_name&#34;:&#34;United States Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;21 – 23 October 2022&#34;,&#34;race_location&#34;:&#34;Circuit of the Americas, United States&#34;},{&#34;race_name&#34;:&#34;Mexico City Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;28 – 30 October 2022&#34;,&#34;race_location&#34;:&#34;Autodromo Hermanos Rodriguez, Mexico&#34;},{&#34;race_name&#34;:&#34;São Paulo Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;11 – 13 November 2022&#34;,&#34;race_location&#34;:&#34;Autódromo José Carlos Pace, Brazil&#34;},{&#34;race_name&#34;:&#34;Abu Dhabi Grand Prix 2022&#34;,&#34;race_date&#34;:&#34;18 – 20 November 2022&#34;,&#34;race_location&#34;:&#34;Yas Marina Circuit, United Arab Emirates&#34;}]}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
+</div>
+
+
+
+  </div><a class="u-url" href="/Fastpages/week-6/2022/10/03/APIs.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/Fastpages/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/Fastpages/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/Fastpages/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>AP Computer Science A 2022-23</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/YashShah138" target="_blank" title="YashShah138"><svg class="svg-icon grey"><use xlink:href="/Fastpages/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://www.linkedin.com/in/yash-shah25" target="_blank" title="yash-shah25"><svg class="svg-icon grey"><use xlink:href="/Fastpages/assets/minima-social-icons.svg#linkedin"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
