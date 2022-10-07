@@ -97,15 +97,11 @@ window.onload = wrap_img;
         const resultContainer = document.getElementById("result");
       
         const options = {
-          method: 'GET', // *GET, POST, PUT, DELETE, etc.
-          mode: 'cors', // no-cors, *cors, same-origin
-          cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
-          credentials: 'omit', // include, *same-origin, omit
+          method: 'GET',
           headers: {
             'X-RapidAPI-Key': '80e73128e0mshda8c95123266391p176951jsnbc06ff234f92',
-            'X-RapidAPI-Host': 'formula-1-standings.p.rapidapi.com',
-            'Content-Type': 'application/json'
-	        }
+            'X-RapidAPI-Host': 'formula-1-standings.p.rapidapi.com'
+          }
         };
       
 // 'Content-Type': 'application/json'
