@@ -249,20 +249,9 @@
   
 
   
-      ,"page4": {
-          "title": "Formula 1 Races",
-          "content": "&lt;!DOCTYPE html&gt; . Formula 1 Races . Formula 1 Races and Locations . Race Name Race Dates Race Location . .",
-          "url": "https://yashshah138.github.io/Fastpages/F1races",
-          "relUrl": "/F1races",
-          "date": ""
-      }
-      
-  
 
   
-
-  
-      ,"page6": {
+      ,"page5": {
           "title": "",
           "content": "Welcome to my fastpages for AP Computer Science A. Here I will show my notes and learnings from this class. . Blogs .",
           "url": "https://yashshah138.github.io/Fastpages/",
@@ -285,7 +274,7 @@
   
 
   
-      ,"page11": {
+      ,"page10": {
           "title": "",
           "content": "Welcome to my fastpages for AP Computer Science A. Here I will show my notes and learnings from this class. . Blogs .",
           "url": "https://yashshah138.github.io/Fastpages/page2/",
@@ -299,7 +288,7 @@
   
 
   
-      ,"page13": {
+      ,"page12": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://yashshah138.github.io/Fastpages/robots.txt",
