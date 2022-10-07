@@ -82,9 +82,9 @@ window.onload = wrap_img;
     <table>
         <thead>
         <tr>
-            <th>Race Name</th>
-            <th>Race Dates</th>
-            <th>Race Location</th>
+            <th>Driver Name</th>
+            <th>Points</th>
+            <th>Nationality</th>
         </tr>
         </thead>
         <tbody id="result">
@@ -111,7 +111,7 @@ window.onload = wrap_img;
 // 'Content-Type': 'application/json'
 
         // fetch the API
-        fetch('https://formula-1-standings.p.rapidapi.com/races', options)
+        fetch('https://formula-1-standings.p.rapidapi.com/standings/drivers', options)
           // response is a RESTful "promise" on any successful fetch
           .then(response => {
             // valid response will have json data
@@ -119,9 +119,9 @@ window.onload = wrap_img;
                 console.log(response);
       
                 // World Data
-                document.getElementById("Race Name").innerHTML = response.race_name;
-                document.getElementById("Race Date").innerHTML = response.race_date;
-                document.getElementById("Race Location").innerHTML = response.race_location;
+                document.getElementById("Driver Name").innerHTML = response.driver_name;
+                document.getElementById("Points").innerHTML = response.points;
+                document.getElementById("Nationality").innerHTML = response.nationality;
       
                 // Country data
                 for (const row of response) {
@@ -130,14 +130,14 @@ window.onload = wrap_img;
                   // tr for each row
                   const tr = document.createElement("tr");
                   // td for each column
-                  const race_name = document.createElement("td");
-                  const race_date = document.createElement("td");
-                  const race_location = document.createElement("td");
+                  const driver_name = document.createElement("td");
+                  const points = document.createElement("td");
+                  const nationality = document.createElement("td");
       
                   // data is specific to the API
-                  race_name.innerHTML = row.race_name;
-                  race_date.innerHTML = row.race_date; 
-                  race_location.innerHTML = row.race_location; 
+                  driver_name.innerHTML = row.driver_name;
+                  points.innerHTML = row.points; 
+                  nationality.innerHTML = row.nationality; 
       
                   // this build td's into tr
                   tr.appendChild(race_name);
