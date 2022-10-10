@@ -6,82 +6,80 @@ title: Formula 1 Races
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Formula 1 Races</title>
-        <meta name="description" content="Formula 1 Races and Their Information." />
-    </head>
+  <head>
+      <title>Formula 1 Races</title>
+      <meta name="description" content="Formula 1 Races and Their Information." />
+  </head>
 
-    <body>
-        <h1 align="center">Formula 1 Races and Locations</h1>     
-    </body>
-    <table>
-        <thead>
-        <tr>
-            <th>Driver Name</th>
-            <th>Points</th>
-            <th>Nationality</th>
-        </tr>
-        </thead>
-        <tbody id="result">
-          <!-- generated rows -->
-        </tbody>
-      </table>
+  <body>
+      <h1 align="center">Formula 1 Races and Locations</h1>     
+  </body>
+  <table>
+    <thead>
+    <tr>
+        <th>Driver Name</th>
+        <th>Points</th>
+        <th>Nationality</th>
+    </tr>
+    </thead>
+    <tbody id="result">
+      <!-- generated rows -->
+    </tbody>
+  </table>
 
-      <script>
-        // prepare HTML result container for new output
-        const resultContainer = document.getElementById("result");
-      
-        const options = {
-          method: 'GET',
-          headers: {
-            'X-RapidAPI-Key': '80e73128e0mshda8c95123266391p176951jsnbc06ff234f92',
-            'X-RapidAPI-Host': 'formula-1-standings.p.rapidapi.com'
+  <script>
+    // prepare HTML result container for new output
+    const resultContainer = document.getElementById("result");
+  
+    const options = {
+      method: 'GET',
+      headers: {
+        'X-RapidAPI-Key': '80e73128e0mshda8c95123266391p176951jsnbc06ff234f92',
+        'X-RapidAPI-Host': 'formula-1-standings.p.rapidapi.com'
+      }
+    };
+
+    // fetch the API
+    fetch('https://formula-1-standings.p.rapidapi.com/standings/drivers', options)
+      // response is a RESTful "promise" on any successful fetch
+      .then(response => {
+        // valid response will have json data
+        response.json().then(result => {
+          console.log(response);
+
+          // World Data
+          document.getElementById("Driver Name").innerHTML = response.driver_name;
+          document.getElementById("Points").innerHTML = response.points;
+          document.getElementById("Nationality").innerHTML = response.nationality;
+
+          // Country data
+          for (const row of response) {
+            console.log(row);
+
+            // tr for each row
+            const tr = document.createElement("tr");
+            // td for each column
+            const driver_name = document.createElement("td");
+            const points = document.createElement("td");
+            const nationality = document.createElement("td");
+
+            // data is specific to the API
+            driver_name.innerHTML = row.driver_name;
+            points.innerHTML = row.points; 
+            nationality.innerHTML = row.nationality; 
+
+            // this build td's into tr
+            tr.appendChild(race_name);
+            tr.appendChild(race_date);
+            tr.appendChild(race_location);
+
+            // add HTML to container
+            resultContainer.appendChild(tr);
           }
-        };
-      
-// 'Content-Type': 'application/json'
-
-        // fetch the API
-        fetch('https://formula-1-standings.p.rapidapi.com/standings/drivers', options)
-          // response is a RESTful "promise" on any successful fetch
-          .then(response => {
-            // valid response will have json data
-            response.json().then(result => {
-                console.log(response);
-      
-                // World Data
-                document.getElementById("Driver Name").innerHTML = response.driver_name;
-                document.getElementById("Points").innerHTML = response.points;
-                document.getElementById("Nationality").innerHTML = response.nationality;
-      
-                // Country data
-                for (const row of response) {
-                  console.log(row);
-      
-                  // tr for each row
-                  const tr = document.createElement("tr");
-                  // td for each column
-                  const driver_name = document.createElement("td");
-                  const points = document.createElement("td");
-                  const nationality = document.createElement("td");
-      
-                  // data is specific to the API
-                  driver_name.innerHTML = row.driver_name;
-                  points.innerHTML = row.points; 
-                  nationality.innerHTML = row.nationality; 
-      
-                  // this build td's into tr
-                  tr.appendChild(race_name);
-                  tr.appendChild(race_date);
-                  tr.appendChild(race_location);
-      
-                  // add HTML to container
-                  resultContainer.appendChild(tr);
-                }
-            })
         })
-        // catch fetch errors (ie ACCESS to server blocked)
-        .catch(err => console.error(err));
-      </script>
+    })
+    // catch fetch errors (ie ACCESS to server blocked)
+    .catch(err => console.error(err));
+  </script>
 
 </html>
