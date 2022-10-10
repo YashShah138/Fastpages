@@ -30,12 +30,12 @@ title: Formula 1 Drivers
   <script>
     // prepare HTML result container for new output
     const resultContainer = document.getElementById("result");
-  
+
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': '80e73128e0mshda8c95123266391p176951jsnbc06ff234f92',
-        'X-RapidAPI-Host': 'formula-1-standings.p.rapidapi.com'
+          'X-RapidAPI-Key': '80e73128e0mshda8c95123266391p176951jsnbc06ff234f92',
+          'X-RapidAPI-Host': 'formula-1-standings.p.rapidapi.com'
       }
     };
 
@@ -66,9 +66,9 @@ title: Formula 1 Drivers
             const nationality = document.createElement("td");
 
             // data is specific to the API
-            driver_name.innerHTML = results.driver_name;
-            points.innerHTML = results.points;
-            nationality.innerHTML = results.nationality;
+            driver_name.innerHTML = row.driver_name;
+            points.innerHTML = row.points;
+            nationality.innerHTML = row.nationality;
 
             // this build td's into tr
             tr.appendChild(race_name);
