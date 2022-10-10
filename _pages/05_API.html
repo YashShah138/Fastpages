@@ -1,18 +1,18 @@
 ---
 layout: default
-permalink: /F1races
-title: Formula 1 Races
+permalink: /F1-Drivers
+title: Formula 1 Drivers
 ---
 
 <!DOCTYPE html>
 <html>
   <head>
-      <title>Formula 1 Races</title>
-      <meta name="description" content="Formula 1 Races and Their Information." />
+      <title>Formula 1 Drivers</title>
+      <meta name="description" content="Formula 1 Drivers and Their Information." />
   </head>
 
   <body>
-      <h1 align="center">Formula 1 Races and Locations</h1>     
+      <h1 align="center">Formula 1 Drivers and Locations</h1>     
   </body>
   <table>
     <thead>
@@ -47,13 +47,15 @@ title: Formula 1 Races
         response.json().then(result => {
           console.log(response);
 
-          // World Data
-          document.getElementById("Driver Name").innerHTML = response.driver_name;
-          document.getElementById("Points").innerHTML = response.points;
-          document.getElementById("Nationality").innerHTML = response.nationality;
+
+          // Driver Data
+          document.getElementById("Driver Name").innerHTML = results.driver_name;
+          document.getElementById("Points").innerHTML = results.points;
+          document.getElementById("Nationality").innerHTML = results.nationality;
+
 
           // Country data
-          for (const row of response) {
+          for (const row of results) {
             console.log(row);
 
             // tr for each row
@@ -64,9 +66,9 @@ title: Formula 1 Races
             const nationality = document.createElement("td");
 
             // data is specific to the API
-            driver_name.innerHTML = row.driver_name;
-            points.innerHTML = row.points; 
-            nationality.innerHTML = row.nationality; 
+            driver_name.innerHTML = results.driver_name;
+            points.innerHTML = results.points;
+            nationality.innerHTML = results.nationality;
 
             // this build td's into tr
             tr.appendChild(race_name);
