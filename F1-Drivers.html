@@ -4,20 +4,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Formula 1 Races | Yash’s Fastpages</title>
+<title>Formula 1 Drivers | Yash’s Fastpages</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Formula 1 Races" />
+<meta property="og:title" content="Formula 1 Drivers" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="AP Computer Science A 2022-23" />
 <meta property="og:description" content="AP Computer Science A 2022-23" />
-<link rel="canonical" href="https://yashshah138.github.io/Fastpages/F1races" />
-<meta property="og:url" content="https://yashshah138.github.io/Fastpages/F1races" />
+<link rel="canonical" href="https://yashshah138.github.io/Fastpages/F1-Drivers" />
+<meta property="og:url" content="https://yashshah138.github.io/Fastpages/F1-Drivers" />
 <meta property="og:site_name" content="Yash’s Fastpages" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Formula 1 Races" />
+<meta property="twitter:title" content="Formula 1 Drivers" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"AP Computer Science A 2022-23","headline":"Formula 1 Races","url":"https://yashshah138.github.io/Fastpages/F1races"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"AP Computer Science A 2022-23","headline":"Formula 1 Drivers","url":"https://yashshah138.github.io/Fastpages/F1-Drivers"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/Fastpages/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://yashshah138.github.io/Fastpages/feed.xml" title="Yash's Fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/Fastpages/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -64,7 +64,7 @@ window.onload = wrap_img;
           </span>
         </label>
 
-        <div class="trigger"><a class="page-link" href="/Fastpages/search/">Search</a><a class="page-link" href="/Fastpages/about">About Me</a><a class="page-link" href="/Fastpages/notes">College Board</a><a class="page-link" href="/Fastpages/categories/">Tags</a><a class="page-link" href="/Fastpages/F1races">Formula 1 Races</a></div>
+        <div class="trigger"><a class="page-link" href="/Fastpages/search/">Search</a><a class="page-link" href="/Fastpages/about">About Me</a><a class="page-link" href="/Fastpages/notes">College Board</a><a class="page-link" href="/Fastpages/categories/">Tags</a><a class="page-link" href="/Fastpages/F1-Drivers">Formula 1 Drivers</a></div>
       </nav></div>
 </header>
 <main class="page-content" aria-label="Content">
@@ -72,12 +72,12 @@ window.onload = wrap_img;
         <!DOCTYPE html>
 <html>
   <head>
-      <title>Formula 1 Races</title>
-      <meta name="description" content="Formula 1 Races and Their Information." />
+      <title>Formula 1 Drivers</title>
+      <meta name="description" content="Formula 1 Drivers and Their Information." />
   </head>
 
   <body>
-      <h1 align="center">Formula 1 Races and Locations</h1>     
+      <h1 align="center">Formula 1 Drivers and Locations</h1>     
   </body>
   <table>
     <thead>
@@ -112,13 +112,15 @@ window.onload = wrap_img;
         response.json().then(result => {
           console.log(response);
 
-          // World Data
-          document.getElementById("Driver Name").innerHTML = response.driver_name;
-          document.getElementById("Points").innerHTML = response.points;
-          document.getElementById("Nationality").innerHTML = response.nationality;
+
+          // Driver Data
+          document.getElementById("Driver Name").innerHTML = results.driver_name;
+          document.getElementById("Points").innerHTML = results.points;
+          document.getElementById("Nationality").innerHTML = results.nationality;
+
 
           // Country data
-          for (const row of response) {
+          for (const row of results) {
             console.log(row);
 
             // tr for each row
@@ -129,9 +131,9 @@ window.onload = wrap_img;
             const nationality = document.createElement("td");
 
             // data is specific to the API
-            driver_name.innerHTML = row.driver_name;
-            points.innerHTML = row.points; 
-            nationality.innerHTML = row.nationality; 
+            driver_name.innerHTML = results.driver_name;
+            points.innerHTML = results.points;
+            nationality.innerHTML = results.nationality;
 
             // this build td's into tr
             tr.appendChild(race_name);
