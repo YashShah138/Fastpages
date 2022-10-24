@@ -13,15 +13,10 @@ _notebooks/.ipynb_checkpoints
 .tweet-cache
 __pycache__
 _posts/2020-02-20-test.md
-.gitignore
 _posts/2022-09-07-Boolean-Expressions-and-If-Statements.md
-.gitignore
 _posts/2022-09-06-code-org.md
-.gitignore
-.gitignore
 _posts/2022-08-22-Python-Notebook.md
 _posts/2022-09-06-Using-Objects.md
-.gitignore
 _posts/2022-08-22-Java-Notebook.md
 _posts/2022-08-24-Primitives.md
 _posts/2022-08-25-Bash-Tutorial.md
@@ -46,3 +41,4 @@ _posts/2022-11-02-Unit-10.md
 _posts/2022-11-01-Unit-09.md
 _posts/2022-10-27-Unit-08.md
 _posts/2022-10-18-Unit-03.md
+_pages/05_API.html
