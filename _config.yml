@@ -36,12 +36,6 @@ url: "https://YashShah138.github.io" # the base hostname & protocol for your sit
 #
 baseurl: "/Fastpages" # the subpath of your site, e.g. "/blog".
 
-# Github and twitter are optional:
-minima:
-  social_links:
-    github: YashShah138
-    linkedin: yash-shah25
-
 # Set this to true to get LaTeX math equation support
 use_math: 
 
