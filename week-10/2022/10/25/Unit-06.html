@@ -154,16 +154,21 @@ window.onload = wrap_img;
         <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
     <span class="p">}</span>
 
+    
+
     <span class="c1">// Tester Method</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">ArrayMethods</span> <span class="n">method</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayMethods</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="o">[]</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">});</span>
+        <span class="n">ArrayMethods</span> <span class="n">method</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayMethods</span><span class="p">(</span><span class="k">new</span> <span class="kt">int</span><span class="o">[]</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">});</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;~~~ Array ~~~&quot;</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">method</span><span class="p">.</span><span class="na">getString</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;~~~ Increasing Order ~~~&quot;</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">method</span><span class="p">.</span><span class="na">increasingOrder</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;~~~ Swap First and Last ~~~&quot;</span><span class="p">);</span>
         <span class="n">method</span><span class="p">.</span><span class="na">swap</span><span class="p">();</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">method</span><span class="p">.</span><span class="na">getString</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;~~~ Replace All W/ 0 ~~~&quot;</span><span class="p">);</span>
         <span class="n">method</span><span class="p">.</span><span class="na">replaceAll</span><span class="p">();</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">method</span><span class="p">.</span><span class="na">getString</span><span class="p">());</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">method</span><span class="p">.</span><span class="na">increasingOrder</span><span class="p">());</span>
     <span class="p">}</span>
 <span class="p">}</span>
 <span class="n">ArrayMethods</span><span class="p">.</span><span class="na">main</span><span class="p">();</span>
@@ -178,13 +183,8 @@ window.onload = wrap_img;
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>[1, 2, 3, 4, 5]
-true
-[5, 2, 3, 4, 1]
-[0, 0, 0, 0, 0]
-true
-</pre>
+<div class="output_subarea output_text output_error">
+<pre></pre>
 </div>
 </div>
 
