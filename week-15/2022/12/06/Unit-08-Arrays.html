@@ -242,14 +242,14 @@ window.onload = wrap_img;
 <div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.*</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.lang.Math.*</span><span class="p">;</span>
 
+<span class="c1">// Create class</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Learning</span> <span class="p">{</span>
 
-    <span class="kd">private</span> <span class="kt">int</span><span class="o">[][]</span> <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">][</span><span class="mi">3</span><span class="o">]</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kt">int</span><span class="o">[][]</span> <span class="n">reversed_arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">][</span><span class="mi">3</span><span class="o">]</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span><span class="o">[][]</span> <span class="n">arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">3</span><span class="o">]</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span><span class="o">[][]</span> <span class="n">reversed_arr</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">3</span><span class="o">][</span><span class="mi">3</span><span class="o">]</span><span class="p">;</span>
     
-    
+    <span class="c1">// Arbitrary values</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">origArr</span><span class="p">()</span> <span class="p">{</span>
-        
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nOriginal array:&quot;</span><span class="p">);</span>
         <span class="c1">// Assign a random value to the 2D array and print it</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
@@ -262,8 +262,8 @@ window.onload = wrap_img;
         <span class="p">}</span>
     <span class="p">}</span>
 
+    <span class="c1">// Reverse the 2D array</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">reversedArray</span><span class="p">()</span> <span class="p">{</span>
-        
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\nReversed array:&quot;</span><span class="p">);</span>
         
         <span class="c1">// Reverse the 2D array and print it</span>
@@ -277,23 +277,25 @@ window.onload = wrap_img;
         <span class="p">}</span>
     <span class="p">}</span>
     
+    <span class="c1">// Multiplies each value in a row and then adds all the products together</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">productSum</span><span class="p">()</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">product</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
         <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-                <span class="c1">// multiply product by value at this array index</span>
+                <span class="c1">// Multiply product by value at this array index</span>
                 <span class="n">product</span> <span class="o">*=</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
             <span class="p">}</span>
-            <span class="c1">// add product to sum after all in row were multiplied, then reset product back to 1</span>
+            <span class="c1">// Add product to sum after all in row were multiplied, then reset product back to 1</span>
             <span class="n">sum</span> <span class="o">+=</span> <span class="n">product</span><span class="p">;</span>
             <span class="n">product</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
         <span class="p">}</span>
         <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
     <span class="p">}</span>
 
+    <span class="c1">// Input of a position and it returns the corresponding value</span>
     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">valueOf</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// try to get array value, return exception if can&#39;t</span>
+        <span class="c1">// Try to get array value, return exception if can&#39;t</span>
         <span class="k">try</span> <span class="p">{</span>
             <span class="k">return</span> <span class="n">arr</span><span class="o">[</span><span class="n">a</span><span class="o">][</span><span class="n">b</span><span class="o">]</span><span class="p">;</span>
         <span class="p">}</span>
@@ -303,15 +305,16 @@ window.onload = wrap_img;
         <span class="p">}</span>
     <span class="p">}</span>
     
+    <span class="c1">// Tester method</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">Learning</span> <span class="n">l</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Learning</span><span class="p">();</span>
         <span class="n">l</span><span class="p">.</span><span class="na">origArr</span><span class="p">();</span> <span class="n">l</span><span class="p">.</span><span class="na">reversedArray</span><span class="p">();</span> 
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Value of [2][2] before reversal: &quot;</span> <span class="o">+</span> <span class="n">l</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Value of [1][1]: &quot;</span> <span class="o">+</span> <span class="n">l</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Sum of products of rows: &quot;</span> <span class="o">+</span> <span class="n">l</span><span class="p">.</span><span class="na">productSum</span><span class="p">());</span>
     
         <span class="n">Learning</span> <span class="n">w</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Learning</span><span class="p">();</span>
         <span class="n">w</span><span class="p">.</span><span class="na">origArr</span><span class="p">();</span> <span class="n">w</span><span class="p">.</span><span class="na">reversedArray</span><span class="p">();</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Value of [2][2] after reversal: &quot;</span> <span class="o">+</span> <span class="n">w</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span> 
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Value of [2][1]: &quot;</span> <span class="o">+</span> <span class="n">w</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span> 
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Sum of products of rows: &quot;</span> <span class="o">+</span> <span class="n">w</span><span class="p">.</span><span class="na">productSum</span><span class="p">());</span>
     <span class="p">}</span>
     
@@ -332,32 +335,28 @@ window.onload = wrap_img;
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
 Original array:
-7 7 0 
-3 5 0 
-1 8 5 
-2 5 4 
+9 9 9 
+7 4 2 
+7 8 7 
 
 Reversed array:
-4 5 2 
-5 8 1 
-0 5 3 
-0 7 7 
-Value of [2][2] before reversal: 5
-Sum of products of rows: 80
+7 8 7 
+2 4 7 
+9 9 9 
+Value of [1][1]: 4
+Sum of products of rows: 1177
 
 Original array:
-7 4 4 
-1 3 9 
-2 6 8 
-7 3 0 
+3 2 7 
+9 3 3 
+6 3 2 
 
 Reversed array:
-0 3 7 
-8 6 2 
-9 3 1 
-4 4 7 
-Value of [2][2] after reversal: 6
-Sum of products of rows: 235
+2 3 6 
+3 3 9 
+7 2 3 
+Value of [2][1]: 3
+Sum of products of rows: 159
 </pre>
 </div>
 </div>
