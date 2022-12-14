@@ -198,69 +198,6 @@ I can eat
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-java"><pre><span></span><span class="cm">/**</span>
-<span class="cm"> * Method Overriding</span>
-<span class="cm"> */</span>
-
-<span class="kd">class</span> <span class="nc">Animal</span> <span class="p">{</span>
-
-    <span class="c1">// overridden method</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="p">(){</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;I am an animal&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-  <span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="p">{</span>
-  
-    <span class="c1">// overriding method</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="p">(){</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;I am a dog&quot;</span><span class="p">);</span>
-    <span class="p">}</span>
-  
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printMessage</span><span class="p">(){</span>
-        <span class="n">display</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-  
-  <span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">Dog</span> <span class="n">dog1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dog</span><span class="p">();</span>
-        <span class="n">dog1</span><span class="p">.</span><span class="na">printMessage</span><span class="p">();</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="n">Main</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>I am a dog
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-    
-
-    
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="cm">/**</span>
 <span class="cm"> * super to Call Superclass Method</span>
 <span class="cm"> */</span>
 
@@ -383,12 +320,125 @@ I am an animal
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="kd">class</span> <span class="nc">MethodOverloading</span> <span class="p">{</span>
+
+    <span class="c1">// this method accepts int object</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">display</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">){</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Got Integer data.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// this method accepts String object</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">display</span><span class="p">(</span><span class="n">String</span> <span class="n">a</span><span class="p">){</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Got String object.&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">display</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+        <span class="n">display</span><span class="p">(</span><span class="s">&quot;Hello&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">MethodOverloading</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Got Integer data.
+Got String object.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Overriding-a-method,-same-signature-of-a-method">Overriding a method, same signature of a method<a class="anchor-link" href="#Overriding-a-method,-same-signature-of-a-method"> </a></h3>
 </div>
 </div>
 </div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-java"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Method Overriding</span>
+<span class="cm"> */</span>
+
+<span class="kd">class</span> <span class="nc">Animal</span> <span class="p">{</span>
+
+    <span class="c1">// overridden method</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="p">(){</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;I am an animal&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Dog</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="p">{</span>
+  
+    <span class="c1">// overriding method</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">display</span><span class="p">(){</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;I am a dog&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+  
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printMessage</span><span class="p">(){</span>
+        <span class="n">display</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+  
+<span class="kd">class</span> <span class="nc">Main</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Dog</span> <span class="n">dog1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dog</span><span class="p">();</span>
+        <span class="n">dog1</span><span class="p">.</span><span class="na">printMessage</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">Main</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>I am a dog
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+    
+
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Abstract-Class,-Abstract-Method">Abstract Class, Abstract Method<a class="anchor-link" href="#Abstract-Class,-Abstract-Method"> </a></h3>
