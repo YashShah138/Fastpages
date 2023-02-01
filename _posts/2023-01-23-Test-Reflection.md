@@ -12,7 +12,6 @@ title: AP CSA Quiz Reflection and Corrections
 
 I think this time, I was  much stronger on the theoretical aspects of the quiz, but made stupid mistakes because I was rushing. I was able to somewhat remember DeMorgan's Law, but had to look it up to make sure I was correct. I made mistakes when I was skimming the code and not playing out the recursion or other theoretical questions.
 
-
 ### Questions
 
 #### Question 37
@@ -30,7 +29,6 @@ Just made stupid mistake in reading the code.
 3.5: Daily Video 1 (Skill 2.B)
 3.5: Daily Video 2 (Skill 2.B)
 3.5: Daily Video 3 (Skill 2.B)
-
 
 #### Question 52
 
