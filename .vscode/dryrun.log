@@ -1,5 +1,5 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory `/Users/yash/Downloads/School/Grade12/vscode/Fastpages'
+make: Entering directory `/Users/yash/Downloads/vscode/Fastpages'
 cat Makefile
-make: Leaving directory `/Users/yash/Downloads/School/Grade12/vscode/Fastpages'
+make: Leaving directory `/Users/yash/Downloads/vscode/Fastpages'
  
