@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Tue Feb 28 09:16:39 2023
+# Make data base, printed on Tue Mar  7 08:36:12 2023
 
 # Variables
 
@@ -17,6 +17,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 ?F = $(notdir $?)
 # environment
 PROVIDE_FULLSTACK_ACTION = true
+# environment
+VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -50,7 +52,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 UUID = 9471d76a-d0fc-4e85-a823-24be57328531
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.vE5xI8GFpI/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.pRtG1uydFW/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -64,7 +66,7 @@ HOME = /Users/yash
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/yash/Library/Application Support/Code/CachedData/441438abd1ac652551dbe4d408dfcec8a499b8bf
+VSCODE_CODE_CACHE_PATH = /Users/yash/Library/Application Support/Code/CachedData/92da9481c0904c6adfe372c12da3b7748d74bdcb
 # environment
 LOGNAME = yash
 # environment
@@ -102,7 +104,7 @@ TMPDIR = /var/folders/m6/j5hxqrvx21b92jjx88n4h2340000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/yash/Library/Application Support/Code/1.75.1-main.sock
+VSCODE_IPC_HOOK = /Users/yash/Library/Application Support/Code/1.76-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -112,7 +114,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.52501928.52501934
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.53955261.53955267
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -140,9 +142,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 74656
+VSCODE_PID = 49976
 # variable set hash-table stats:
-# Load=65/1024=6%, Rehash=0, Collisions=2/89=2%
+# Load=66/1024=6%, Rehash=0, Collisions=2/90=2%
 
 # Pattern-specific Variable Values
 
@@ -150,7 +152,7 @@ VSCODE_PID = 74656
 
 # Directories
 
-# . (device 16777220, inode 41567292): 40 files, no impossibilities.
+# . (device 16777225, inode 41567292): 40 files, no impossibilities.
 
 # 40 files, no impossibilities in 1 directories.
 
@@ -307,7 +309,7 @@ convert: .FORCE
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Tue Feb 28 09:16:39 2023
+# Finished Make data base on Tue Mar  7 08:36:12 2023
 
  
 make: *** No rule to make target `all'.  Stop.
