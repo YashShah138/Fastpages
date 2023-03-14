@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Wed Mar  8 09:59:49 2023
+# Make data base, printed on Tue Mar 14 11:19:17 2023
 
 # Variables
 
@@ -42,11 +42,13 @@ __CFBundleIdentifier = com.microsoft.VSCode
 # environment
 VSCODE_CWD = /
 # environment
-PATH = /Users/yash/.gem/ruby/3.1.3/bin:/Users/yash/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin:/Users/yash/.rubies/ruby-3.1.3/bin:/Users/yash/opt/anaconda3/bin:/Users/yash/opt/anaconda3/condabin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools
+PATH = /Users/yash/.gem/ruby/3.1.3/bin:/Users/yash/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin:/Users/yash/.rubies/ruby-3.1.3/bin:/Users/yash/anaconda3/bin:/Users/yash/anaconda3/condabin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools
 # environment
 GOLANG_EXECUTABLE = go
 # environment
 THREE_SCALE_USER_TOKEN = 207c527cfc2a6b8dcf4fa43ad7a976da
+# environment
+LaunchInstanceID = 8FA51D33-A053-4895-ACC6-3FC277E38A15
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
@@ -54,11 +56,11 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 UUID = 9471d76a-d0fc-4e85-a823-24be57328531
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.pRtG1uydFW/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.jl9L1fuvvn/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-CONDA_EXE = /Users/yash/opt/anaconda3/bin/conda
+CONDA_EXE = /Users/yash/anaconda3/bin/conda
 # environment
 PWD = /Users/yash/Downloads/vscode/Fastpages
 # environment
@@ -72,7 +74,7 @@ HOME = /Users/yash
 # default
 MAKEFILEPATH = $(shell /usr/bin/xcode-select -print-path 2>/dev/null || echo /Developer)/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/yash/Library/Application Support/Code/CachedData/92da9481c0904c6adfe372c12da3b7748d74bdcb
+VSCODE_CODE_CACHE_PATH = /Users/yash/Library/Application Support/Code/CachedData/5e805b79fcb6ba4c2d23712967df89a089da575b
 # environment
 LOGNAME = yash
 # environment
@@ -132,7 +134,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.53955261.53955267
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.54694341.54694349
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -150,7 +152,9 @@ MAKEFILES :=
 # environment
 LC_ALL = C
 # environment
-CONDA_PYTHON_EXE = /Users/yash/opt/anaconda3/bin/python
+CONDA_PYTHON_EXE = /Users/yash/anaconda3/bin/python
+# environment
+SECURITYSESSIONID = 186a3
 # automatic
 ^F = $(notdir $^)
 # default
@@ -162,13 +166,13 @@ GEM_ROOT = /Users/yash/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0
 # environment
 MAKELEVEL := 0
 # environment
-CONDA_PREFIX = /Users/yash/opt/anaconda3
+CONDA_PREFIX = /Users/yash/anaconda3
 # environment
-VSCODE_PID = 77436
+VSCODE_PID = 2256
 # environment
 LANG = C
 # variable set hash-table stats:
-# Load=78/1024=8%, Rehash=0, Collisions=4/102=4%
+# Load=80/1024=8%, Rehash=0, Collisions=4/104=4%
 
 # Pattern-specific Variable Values
 
@@ -176,7 +180,7 @@ LANG = C
 
 # Directories
 
-# . (device 16777225, inode 41567292): 40 files, no impossibilities.
+# . (device 16777220, inode 41567292): 40 files, no impossibilities.
 
 # 40 files, no impossibilities in 1 directories.
 
@@ -301,14 +305,14 @@ bash-jekyll: .FORCE
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 46):
+ 
+make: *** No rule to make target `all'.  Stop.
+
 	docker-compose exec jekyll /bin/bash
 	
 
 convert: .FORCE
 #  Implicit rule search has not been done.
- 
-make: *** No rule to make target `all'.  Stop.
-
 #  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 29):
@@ -336,6 +340,6 @@ make: *** No rule to make target `all'.  Stop.
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Mar  8 09:59:49 2023
+# Finished Make data base on Tue Mar 14 11:19:17 2023
 
  
