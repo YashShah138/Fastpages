@@ -17,7 +17,7 @@ layout: notebook
 -->
 
 <div class="container" id="notebook-container">
-        
+    
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="The-Public-Interface-of-a-Class">The <code>Public</code> Interface of a Class<a class="anchor-link" href="#The-Public-Interface-of-a-Class"> </a></h2>
