@@ -1,6 +1,6 @@
 ---
 keywords: fastai
-description: Notes On CB Video "Review Session 2: Classes and Objects"
+description: Notes On CB Video "Review Session 2 - Classes and Objects"
 title: Classes And Objects Notes
 toc: true
 comments: false
