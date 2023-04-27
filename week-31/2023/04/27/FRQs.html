@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      6 min read
+      2 min read
     
 </span></p>
 
@@ -124,21 +124,9 @@ window.onload = wrap_img;
 
   <div class="post-content e-content" itemprop="articleBody">
     <ul id="toc" class="section-nav">
-<li class="toc-entry toc-h2"><a href="#FRQs---Methods-and-Control-Structures">FRQs - Methods and Control Structures </a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#2019-FRQ-Question-1">2019 FRQ Question 1 </a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#FRQs---Classes">FRQs - Classes </a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#2019-FRQ-Question-2">2019 FRQ Question 2 </a></li>
-</ul>
-</li>
-<li class="toc-entry toc-h2"><a href="#FRQs---Arrays-and-ArrayLists">FRQs - Arrays and ArrayLists </a>
-<ul>
-<li class="toc-entry toc-h3"><a href="#2019-FRQ-Question-3">2019 FRQ Question 3 </a></li>
-</ul>
-</li>
+<li class="toc-entry toc-h2"><a href="#FRQs---Methods-and-Control-Structures">FRQs - Methods and Control Structures </a></li>
+<li class="toc-entry toc-h2"><a href="#FRQs---Classes">FRQs - Classes </a></li>
+<li class="toc-entry toc-h2"><a href="#FRQs---Arrays-and-ArrayLists">FRQs - Arrays and ArrayLists </a></li>
 <li class="toc-entry toc-h2"><a href="#FRQs---2D-Arrays">FRQs - 2D Arrays </a>
 <ul>
 <li class="toc-entry toc-h3"><a href="#2019-FRQ-Question-4">2019 FRQ Question 4 </a></li>
@@ -159,9 +147,6 @@ window.onload = wrap_img;
 <h2 id="FRQs---Methods-and-Control-Structures">
 <a class="anchor" href="#FRQs---Methods-and-Control-Structures" aria-hidden="true"><span class="octicon octicon-link"></span></a>FRQs - Methods and Control Structures<a class="anchor-link" href="#FRQs---Methods-and-Control-Structures"> </a>
 </h2>
-<h3 id="2019-FRQ-Question-1">
-<a class="anchor" href="#2019-FRQ-Question-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>2019 FRQ Question 1<a class="anchor-link" href="#2019-FRQ-Question-1"> </a>
-</h3>
 </div>
 </div>
 </div>
@@ -172,89 +157,28 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="c1">////////////////////    GIVEN CODE    \\\\\\\\\\\\\\\\\\\\</span>
+<div class=" highlight hl-java"><pre><span></span><span class="c1">////////////////////          Part A          \\\\\\\\\\\\\\\\\\\\</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getCheck</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">numDigits</span> <span class="o">=</span> <span class="n">getNumberOfDigits</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">APCalendar</span> <span class="p">{</span>
-    <span class="cm">/** Returns true if year is a leap year and false otherwise. */</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isLeapYear</span><span class="p">(</span><span class="kt">int</span> <span class="n">year</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-                <span class="p">}</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>    
-    
-    
-    <span class="c1">////////////////////    Part A    \\\\\\\\\\\\\\\\\\\\</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">numberOfLeapYears</span><span class="p">(</span><span class="kt">int</span> <span class="n">year1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">year2</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">year1</span><span class="p">;</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="n">year2</span><span class="p">;</span> <span class="n">y</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">isLeapYear</span><span class="p">(</span><span class="n">y</span><span class="p">))</span> <span class="p">{</span>
-                <span class="n">count</span><span class="o">++</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">numDigits</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">factor</span> <span class="o">=</span> <span class="n">numDigits</span> <span class="o">-</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="n">sum</span> <span class="o">+=</span> <span class="n">factor</span> <span class="o">*</span> <span class="n">getDigit</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="cm">/** Returns the value representing the day of the week for the first day of year, * where 0 denotes Sunday, 1 denotes Monday, ..., and 6 denotes Saturday. */</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">firstDayOfYear</span><span class="p">(</span><span class="kt">int</span> <span class="n">year</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">year</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="n">y</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">/</span> <span class="mi">4</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">y</span> <span class="o">/</span> <span class="mi">100</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">/</span> <span class="mi">400</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">7</span><span class="p">;</span>
-        <span class="k">return</span> <span class="n">d</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="cm">/** Returns n, where month, day, and year specify the nth day of the year.</span>
-<span class="cm">     * Returns 1 for January 1 (month = 1, day = 1) of any year.</span>
-<span class="cm">     * Precondition: The date represented by month, day, year is a valid date.</span>
-<span class="cm">     */</span>
-    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">dayOfYear</span><span class="p">(</span><span class="kt">int</span> <span class="n">month</span><span class="p">,</span> <span class="kt">int</span> <span class="n">day</span><span class="p">,</span> <span class="kt">int</span> <span class="n">year</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span><span class="o">[]</span> <span class="n">daysInMonth</span> <span class="o">=</span> <span class="p">{</span><span class="mi">31</span><span class="p">,</span> <span class="mi">28</span> <span class="o">+</span> <span class="p">(</span><span class="n">isLeapYear</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">};</span>
-        <span class="kt">int</span> <span class="n">numDays</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">month</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">numDays</span> <span class="o">+=</span> <span class="n">daysInMonth</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">]</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="n">numDays</span> <span class="o">+=</span> <span class="n">day</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">isLeapYear</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">month</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">numDays</span><span class="o">++</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">numDays</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-
-    <span class="cm">/** Returns the value representing the day of the week for the given date</span>
-<span class="cm">    * (month, day, year), where 0 denotes Sunday, 1 denotes Monday, ...,</span>
-<span class="cm">    * and 6 denotes Saturday.</span>
-<span class="cm">    * Precondition: The date represented by month, day, year is a valid date.</span>
-<span class="cm">    */</span>
-    <span class="c1">////////////////////    Part B    \\\\\\\\\\\\\\\\\\\\</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">dayOfWeek</span><span class="p">(</span><span class="kt">int</span> <span class="n">month</span><span class="p">,</span> <span class="kt">int</span> <span class="n">day</span><span class="p">,</span> <span class="kt">int</span> <span class="n">year</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">startDay</span> <span class="o">=</span> <span class="n">firstDayOfYear</span><span class="p">(</span><span class="n">year</span><span class="p">);</span>
-        <span class="kt">int</span> <span class="n">nthDay</span> <span class="o">=</span> <span class="n">dayOfYear</span><span class="p">(</span><span class="n">month</span><span class="p">,</span> <span class="n">day</span><span class="p">,</span> <span class="n">year</span><span class="p">);</span>
-        <span class="kt">int</span> <span class="n">returnDay</span> <span class="o">=</span> <span class="p">(</span><span class="n">startDay</span> <span class="o">+</span> <span class="n">nthDay</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">7</span><span class="p">;</span>
-        <span class="k">return</span> <span class="n">returnDay</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="c1">// public static void main1(String[] args) {</span>
-    <span class="c1">//     int year1 = 2005;</span>
-    <span class="c1">//     int year2 = 2023;</span>
-    <span class="c1">//     int month = 4;</span>
-    <span class="c1">//     int day = 26;</span>
-    <span class="c1">//     int year = 2023;</span>
-        
-    <span class="c1">//     System.out.println("Number of leap years from " + year1 + " to " + year2 + ": " + numberOfLeapYears(year1, year2));</span>
-    <span class="c1">//     System.out.println("Day of the week for " + month + "-" + day + "-" + year + ": " + dayOfWeek(month, day, year));</span>
-    <span class="c1">// }</span>
+    <span class="kt">int</span> <span class="n">checkDigit</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">checkDigit</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="c1">// APCalendar.main1(null);</span>
+<span class="c1">////////////////////          Part B          \\\\\\\\\\\\\\\\\\\\</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isValid</span><span class="p">(</span><span class="kt">int</span> <span class="n">numWithCheckDigit</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">numDigits</span> <span class="o">=</span> <span class="n">getNumberOfDigits</span><span class="p">(</span><span class="n">numWithCheckDigit</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">checkDigit</span> <span class="o">=</span> <span class="n">getDigit</span><span class="p">(</span><span class="n">numWithCheckDigit</span><span class="p">,</span> <span class="n">numDigits</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="n">numWithCheckDigit</span> <span class="o">/</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// remove check digit</span>
+    <span class="kt">int</span> <span class="n">computedCheckDigit</span> <span class="o">=</span> <span class="n">getCheck</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">checkDigit</span> <span class="o">==</span> <span class="n">computedCheckDigit</span><span class="p">;</span>
+<span class="p">}</span>
 </pre></div>
 
     </div>
@@ -270,9 +194,6 @@ window.onload = wrap_img;
 <h2 id="FRQs---Classes">
 <a class="anchor" href="#FRQs---Classes" aria-hidden="true"><span class="octicon octicon-link"></span></a>FRQs - Classes<a class="anchor-link" href="#FRQs---Classes"> </a>
 </h2>
-<h3 id="2019-FRQ-Question-2">
-<a class="anchor" href="#2019-FRQ-Question-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>2019 FRQ Question 2<a class="anchor-link" href="#2019-FRQ-Question-2"> </a>
-</h3>
 </div>
 </div>
 </div>
@@ -283,59 +204,31 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">StepTracker</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">minSteps</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">totalSteps</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">numActiveDays</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kt">int</span> <span class="n">numDays</span><span class="p">;</span>
-    
-    <span class="kd">public</span> <span class="nf">StepTracker</span><span class="p">(</span><span class="kt">int</span> <span class="n">minSteps</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">minSteps</span> <span class="o">=</span> <span class="n">minSteps</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">totalSteps</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">numActiveDays</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">numDays</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addDailySteps</span><span class="p">(</span><span class="kt">int</span> <span class="n">steps</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">totalSteps</span> <span class="o">+=</span> <span class="n">steps</span><span class="p">;</span>
-        <span class="n">numDays</span><span class="o">++</span><span class="p">;</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">steps</span> <span class="o">&gt;=</span> <span class="n">minSteps</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">numActiveDays</span><span class="o">++</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">activeDays</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">numActiveDays</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">averageSteps</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">numDays</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="mf">0.0</span><span class="p">;</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="p">(</span><span class="kt">double</span><span class="p">)</span> <span class="n">totalSteps</span> <span class="o">/</span> <span class="n">numDays</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AdditionPattern</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">current</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">start</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">increment</span><span class="p">;</span>
 
-    <span class="c1">// public static void main2(String[] args) {</span>
-    <span class="c1">//     // create a StepTracker object with a minimum of 5000 steps per day</span>
-    <span class="c1">//     StepTracker st = new StepTracker(5000);</span>
-        
-    <span class="c1">//     // add daily steps for the past week</span>
-    <span class="c1">//     st.addDailySteps(6000);</span>
-    <span class="c1">//     st.addDailySteps(4500);</span>
-    <span class="c1">//     st.addDailySteps(7000);</span>
-    <span class="c1">//     st.addDailySteps(3000);</span>
-    <span class="c1">//     st.addDailySteps(5500);</span>
-    <span class="c1">//     st.addDailySteps(8000);</span>
-    <span class="c1">//     st.addDailySteps(4000);</span>
-        
-    <span class="c1">//     // print the number of active days and the average number of steps per day</span>
-    <span class="c1">//     System.out.println("Active days: " + st.activeDays());</span>
-    <span class="c1">//     System.out.println("Average steps per day: " + st.averageSteps());</span>
-    <span class="c1">// }</span>
+    <span class="kd">public</span> <span class="nf">AdditionPattern</span><span class="p">(</span><span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="kt">int</span> <span class="n">increment</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">start</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">increment</span> <span class="o">=</span> <span class="n">increment</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">current</span> <span class="o">=</span> <span class="n">start</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">currentNumber</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">current</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">next</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">current</span> <span class="o">+=</span> <span class="n">increment</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">prev</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">current</span> <span class="o">-</span> <span class="n">increment</span> <span class="o">&gt;=</span> <span class="n">start</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">current</span> <span class="o">-=</span> <span class="n">increment</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 <span class="p">}</span>
-
-<span class="c1">// StepTracker.main2(null);</span>
 </pre></div>
 
     </div>
@@ -351,9 +244,6 @@ window.onload = wrap_img;
 <h2 id="FRQs---Arrays-and-ArrayLists">
 <a class="anchor" href="#FRQs---Arrays-and-ArrayLists" aria-hidden="true"><span class="octicon octicon-link"></span></a>FRQs - Arrays and ArrayLists<a class="anchor-link" href="#FRQs---Arrays-and-ArrayLists"> </a>
 </h2>
-<h3 id="2019-FRQ-Question-3">
-<a class="anchor" href="#2019-FRQ-Question-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>2019 FRQ Question 3<a class="anchor-link" href="#2019-FRQ-Question-3"> </a>
-</h3>
 </div>
 </div>
 </div>
@@ -364,65 +254,34 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Delimiters</span> <span class="p">{</span>
-    <span class="cm">/** The open and close delimiters. */</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">openDel</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">closeDel</span><span class="p">;</span>
-    
-    <span class="cm">/** Constructs a Delimiters object where open is the open delimiter and close is the</span>
-<span class="cm">    * close delimiter.</span>
-<span class="cm">    * Precondition: open and close are non-empty strings. */</span>
-    <span class="kd">public</span> <span class="nf">Delimiters</span><span class="p">(</span><span class="n">String</span> <span class="n">open</span><span class="p">,</span> <span class="n">String</span> <span class="n">close</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">openDel</span> <span class="o">=</span> <span class="n">open</span><span class="p">;</span>
-        <span class="n">closeDel</span> <span class="o">=</span> <span class="n">close</span><span class="p">;</span>
-    <span class="p">}</span>
-    
-    <span class="cm">/** Returns an ArrayList of delimiters from the array tokens, as described in part (a). */</span>
-    <span class="c1">////////////////////    Part A    \\\\\\\\\\\\\\\\\\\\</span>
-    <span class="kd">public</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="nf">getDelimitersList</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">tokens</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">delimitersList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-        <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">token</span> <span class="p">:</span> <span class="n">tokens</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">isDelimiter</span><span class="p">(</span><span class="n">token</span><span class="p">))</span> <span class="p">{</span>
-                <span class="n">delimitersList</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">token</span><span class="p">);</span>
-            <span class="p">}</span>
+<div class=" highlight hl-java"><pre><span></span><span class="c1">////////////////////          Part A          \\\\\\\\\\\\\\\\\\\\</span>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">addRepair</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">CarRepair</span> <span class="n">repair</span> <span class="p">:</span> <span class="n">schedule</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">repair</span><span class="p">.</span><span class="na">getMechanicNum</span><span class="p">()</span> <span class="o">==</span> <span class="n">m</span> <span class="o">||</span> <span class="n">repair</span><span class="p">.</span><span class="na">getBayNum</span><span class="p">()</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
         <span class="p">}</span>
-        <span class="k">return</span> <span class="n">delimitersList</span><span class="p">;</span>
     <span class="p">}</span>
-
-    <span class="cm">/** Returns true if the delimiters are balanced and false otherwise, as described in part (b). * Precondition: delimiters contains only valid open and close delimiters. */</span>
-    <span class="c1">////////////////////    Part B    \\\\\\\\\\\\\\\\\\\\</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isDelimiter</span><span class="p">(</span><span class="n">String</span> <span class="n">token</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">token</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"("</span><span class="p">)</span> <span class="o">||</span> <span class="n">token</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">")"</span><span class="p">)</span> <span class="o">||</span> <span class="n">token</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"["</span><span class="p">)</span> <span class="o">||</span> <span class="n">token</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"]"</span><span class="p">)</span> <span class="o">||</span> <span class="n">token</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"{"</span><span class="p">)</span> <span class="o">||</span> <span class="n">token</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">"}"</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isBalanced</span><span class="p">(</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">delimiters</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">delimiter</span> <span class="p">:</span> <span class="n">delimiters</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">delimiter</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">openDel</span><span class="p">))</span> <span class="p">{</span>
-                <span class="n">count</span><span class="o">++</span><span class="p">;</span>
-            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">delimiter</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">closeDel</span><span class="p">))</span> <span class="p">{</span>
-                <span class="n">count</span><span class="o">--</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">count</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">return</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="c1">// public static void main3(String[] args) {</span>
-    <span class="c1">//     String[] tokens = {"{", "(", "a", ")", "}", "[", "b", "]", "(", "c", ")"};</span>
-    <span class="c1">//     Delimiters delimiters = new Delimiters("(", ")");</span>
-    <span class="c1">//     ArrayList&lt;String&gt; delimitersList = delimiters.getDelimitersList(tokens);</span>
-    <span class="c1">//     System.out.println("Delimiters list: " + delimitersList);</span>
-    <span class="c1">//     boolean isBalanced = delimiters.isBalanced(delimitersList);</span>
-    <span class="c1">//     System.out.println("Is balanced: " + isBalanced);</span>
-    <span class="c1">// }</span>
+    <span class="n">schedule</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">CarRepair</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">b</span><span class="p">));</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="c1">// Delimiters.main3(null);</span>
+<span class="c1">////////////////////          Part B          \\\\\\\\\\\\\\\\\\\\</span>
+<span class="kd">public</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">availableMechanics</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">availableMechanics</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// iterate over all mechanic numbers</span>
+        <span class="kt">boolean</span> <span class="n">isAvailable</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">CarRepair</span> <span class="n">repair</span> <span class="p">:</span> <span class="n">schedule</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// iterate over all repairs in schedule</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">repair</span><span class="p">.</span><span class="na">getMechanicNum</span><span class="p">()</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// if the mechanic is already assigned to a repair</span>
+                <span class="n">isAvailable</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+                <span class="k">break</span><span class="p">;</span> <span class="c1">// exit inner loop as soon as a mechanic is found to be busy</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">isAvailable</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">availableMechanics</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">i</span><span class="p">);</span> <span class="c1">// add the available mechanic to the list</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">availableMechanics</span><span class="p">;</span> <span class="c1">// return the list of available mechanics</span>
+<span class="p">}</span>
 </pre></div>
 
     </div>
@@ -451,47 +310,39 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">LightBoard</span> <span class="p">{</span>
-    <span class="cm">/** The lights on the board, where true represents on and false represents off. */</span>
-    <span class="kd">private</span> <span class="kt">boolean</span><span class="o">[][]</span> <span class="n">lights</span><span class="p">;</span>
-    
-    <span class="cm">/** Constructs a LightBoard object having numRows rows and numCols columns.</span>
-<span class="cm">    * Precondition: numRows &gt; 0, numCols &gt; 0</span>
-<span class="cm">    * Postcondition: each light has a 40% probability of being set to on. */</span>
-    <span class="c1">////////////////////    Part A    \\\\\\\\\\\\\\\\\\\\</span>
-    <span class="kd">public</span> <span class="nf">LightBoard</span><span class="p">(</span><span class="kt">int</span> <span class="n">numRows</span><span class="p">,</span> <span class="kt">int</span> <span class="n">numCols</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">lights</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">numRows</span><span class="o">][</span><span class="n">numCols</span><span class="o">]</span><span class="p">;</span>
-        <span class="n">Random</span> <span class="n">random</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Random</span><span class="p">();</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">numRows</span><span class="p">;</span> <span class="n">r</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">numCols</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">random</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.4</span><span class="p">)</span> <span class="p">{</span>
-                    <span class="n">lights</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">c</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-    <span class="p">}</span>    
-
-    <span class="cm">/** Evaluates a light in row index row and column index col and returns a status</span>
-<span class="cm">    * as described in part (b).</span>
-<span class="cm">    * Precondition: row and col are valid indexes in lights. */</span>
-    <span class="c1">////////////////////    Part B    \\\\\\\\\\\\\\\\\\\\</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">evaluateLight</span><span class="p">(</span><span class="kt">int</span> <span class="n">row</span><span class="p">,</span> <span class="kt">int</span> <span class="n">col</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">numOn</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">r</span> <span class="o">&lt;</span> <span class="n">lights</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">r</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">c</span> <span class="o">&lt;</span> <span class="n">lights</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">c</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">lights</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">c</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">r</span> <span class="o">==</span> <span class="n">row</span> <span class="o">||</span> <span class="n">c</span> <span class="o">==</span> <span class="n">col</span><span class="p">))</span> <span class="p">{</span>
-                    <span class="n">numOn</span><span class="o">++</span><span class="p">;</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">lights</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">numOn</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span> <span class="p">{</span>
+<div class=" highlight hl-java"><pre><span></span><span class="c1">////////////////////          Part A          \\\\\\\\\\\\\\\\\\\\</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isNonZeroRow</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">array2D</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="n">array2D</span><span class="o">[</span><span class="n">r</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">col</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">array2D</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">lights</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">numOn</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="n">lights</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">col</span><span class="o">]</span><span class="p">;</span>
         <span class="p">}</span>
     <span class="p">}</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">////////////////////          Part B          \\\\\\\\\\\\\\\\\\\\</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[][]</span> <span class="nf">resize</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">array2D</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// count the number of non-zero rows in the original array</span>
+    <span class="kt">int</span> <span class="n">numNonZeroRows</span> <span class="o">=</span> <span class="n">numNonZeroRows</span><span class="p">(</span><span class="n">array2D</span><span class="p">);</span>
+    
+    <span class="c1">// create a new 2D array with the same number of columns as the original array</span>
+    <span class="c1">// and the number of rows equal to the count of non-zero rows</span>
+    <span class="kt">int</span><span class="o">[][]</span> <span class="n">resizedArray</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">numNonZeroRows</span><span class="o">][</span><span class="n">array2D</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="o">]</span><span class="p">;</span>
+    
+    <span class="c1">// iterate over each row in the original array</span>
+    <span class="c1">// if it is a non-zero row, copy it to the new array</span>
+    <span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array2D</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">isNonZeroRow</span><span class="p">(</span><span class="n">array2D</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">array2D</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">resizedArray</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">array2D</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">row</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    
+    <span class="c1">// return the new array</span>
+    <span class="k">return</span> <span class="n">resizedArray</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
