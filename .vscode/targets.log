@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Wed Apr 26 15:17:54 2023
+# Make data base, printed on Thu Apr 27 08:35:46 2023
 
 # Variables
 
@@ -140,8 +140,6 @@ XPC_SERVICE_NAME = application.com.microsoft.VSCode.57404499.57404505
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
-VSCODE_L10N_BUNDLE_LOCATION = 
-# environment
 RECOMMENDER_API_URL = https://gw.api.openshift.io//api/v2
 # automatic
 +F = $(notdir $+)
@@ -170,11 +168,11 @@ MAKELEVEL := 0
 # environment
 CONDA_PREFIX = /Users/yash/anaconda3
 # environment
-VSCODE_PID = 46681
+VSCODE_PID = 87621
 # environment
 LANG = C
 # variable set hash-table stats:
-# Load=81/1024=8%, Rehash=0, Collisions=4/105=4%
+# Load=80/1024=8%, Rehash=0, Collisions=4/104=4%
 
 # Pattern-specific Variable Values
 
@@ -290,10 +288,10 @@ restart-jekyll: .FORCE
 
 help:
 #  Implicit rule search has not been done.
+#  Modification time never checked.
  
 make: *** No rule to make target `all'.  Stop.
 
-#  Modification time never checked.
 #  File has not been updated.
 #  commands to execute (from `Makefile', line 2):
 	cat Makefile
@@ -342,6 +340,6 @@ convert: .FORCE
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Wed Apr 26 15:17:54 2023
+# Finished Make data base on Thu Apr 27 08:35:47 2023
 
  
