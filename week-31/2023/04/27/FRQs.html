@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      2 min read
+      7 min read
     
 </span></p>
 
@@ -153,31 +153,98 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="c1">////////////////////          Part A          \\\\\\\\\\\\\\\\\\\\</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getCheck</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="kt">int</span> <span class="n">numDigits</span> <span class="o">=</span> <span class="n">getNumberOfDigits</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">numDigits</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">factor</span> <span class="o">=</span> <span class="n">numDigits</span> <span class="o">-</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
-        <span class="n">sum</span> <span class="o">+=</span> <span class="n">factor</span> <span class="o">*</span> <span class="n">getDigit</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CheckDigit</span> <span class="p">{</span>
+    <span class="cm">/** Returns the number of digits in num. */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getNumberOfDigits</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">num</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">num</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
     <span class="p">}</span>
 
-    <span class="kt">int</span> <span class="n">checkDigit</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">checkDigit</span><span class="p">;</span>
+    <span class="cm">/** Returns the nth digit of num.</span>
+<span class="cm">     * Precondition: n &gt;= 1 and n &lt;= the number of digits in num</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getDigit</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">,</span> <span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">numDigits</span> <span class="o">=</span> <span class="n">getNumberOfDigits</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">numDigits</span> <span class="o">-</span> <span class="n">n</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">index</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">num</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">////////////////////          Part A          \\\\\\\\\\\\\\\\\\\\</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getCheck</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">numDigits</span> <span class="o">=</span> <span class="n">getNumberOfDigits</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">numDigits</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">factor</span> <span class="o">=</span> <span class="n">numDigits</span> <span class="o">-</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="n">factor</span> <span class="o">*</span> <span class="n">getDigit</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="kt">int</span> <span class="n">checkDigit</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">checkDigit</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">////////////////////          Part B          \\\\\\\\\\\\\\\\\\\\</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isValid</span><span class="p">(</span><span class="kt">int</span> <span class="n">numWithCheckDigit</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">numWithCheckDigit</span> <span class="o">/</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// Get rid of the check digit</span>
+        <span class="kt">int</span> <span class="n">checkDigit</span> <span class="o">=</span> <span class="n">numWithCheckDigit</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// Get the check digit</span>
+    
+        <span class="k">return</span> <span class="n">getCheck</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="o">==</span> <span class="n">checkDigit</span><span class="p">;</span> <span class="c1">// Check if the computed check digit matches the given check digit</span>
+    <span class="p">}</span>    
+    
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">num1</span> <span class="o">=</span> <span class="mi">123456</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">check1</span> <span class="o">=</span> <span class="n">getCheck</span><span class="p">(</span><span class="n">num1</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Check digit for "</span> <span class="o">+</span> <span class="n">num1</span> <span class="o">+</span> <span class="s">" is "</span> <span class="o">+</span> <span class="n">check1</span><span class="p">);</span>
+        <span class="c1">// expected output: "Check digit for 123456 is 2"</span>
+    
+        <span class="kt">int</span> <span class="n">num2</span> <span class="o">=</span> <span class="mi">9876543</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">check2</span> <span class="o">=</span> <span class="n">getCheck</span><span class="p">(</span><span class="n">num2</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Check digit for "</span> <span class="o">+</span> <span class="n">num2</span> <span class="o">+</span> <span class="s">" is "</span> <span class="o">+</span> <span class="n">check2</span><span class="p">);</span>
+        <span class="c1">// expected output: "Check digit for 9876543 is 4"</span>
+    
+        <span class="kt">int</span> <span class="n">numWithCheck1</span> <span class="o">=</span> <span class="mi">1234562</span><span class="p">;</span>
+        <span class="kt">boolean</span> <span class="n">isValid1</span> <span class="o">=</span> <span class="n">isValid</span><span class="p">(</span><span class="n">numWithCheck1</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">numWithCheck1</span> <span class="o">+</span> <span class="s">" is "</span> <span class="o">+</span> <span class="p">(</span><span class="n">isValid1</span> <span class="o">?</span> <span class="s">"valid"</span> <span class="p">:</span> <span class="s">"invalid"</span><span class="p">));</span>
+        <span class="c1">// expected output: "1234562 is invalid"</span>
+    
+        <span class="kt">int</span> <span class="n">numWithCheck2</span> <span class="o">=</span> <span class="mi">98765434</span><span class="p">;</span>
+        <span class="kt">boolean</span> <span class="n">isValid2</span> <span class="o">=</span> <span class="n">isValid</span><span class="p">(</span><span class="n">numWithCheck2</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">numWithCheck2</span> <span class="o">+</span> <span class="s">" is "</span> <span class="o">+</span> <span class="p">(</span><span class="n">isValid2</span> <span class="o">?</span> <span class="s">"valid"</span> <span class="p">:</span> <span class="s">"invalid"</span><span class="p">));</span>
+        <span class="c1">// expected output: "98765434 is invalid"</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="c1">////////////////////          Part B          \\\\\\\\\\\\\\\\\\\\</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isValid</span><span class="p">(</span><span class="kt">int</span> <span class="n">numWithCheckDigit</span><span class="p">)</span> <span class="p">{</span>
-    <span class="kt">int</span> <span class="n">numDigits</span> <span class="o">=</span> <span class="n">getNumberOfDigits</span><span class="p">(</span><span class="n">numWithCheckDigit</span><span class="p">);</span>
-    <span class="kt">int</span> <span class="n">checkDigit</span> <span class="o">=</span> <span class="n">getDigit</span><span class="p">(</span><span class="n">numWithCheckDigit</span><span class="p">,</span> <span class="n">numDigits</span><span class="p">);</span>
-    <span class="kt">int</span> <span class="n">number</span> <span class="o">=</span> <span class="n">numWithCheckDigit</span> <span class="o">/</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// remove check digit</span>
-    <span class="kt">int</span> <span class="n">computedCheckDigit</span> <span class="o">=</span> <span class="n">getCheck</span><span class="p">(</span><span class="n">number</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">checkDigit</span> <span class="o">==</span> <span class="n">computedCheckDigit</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="n">CheckDigit</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Check digit for 123456 is 7
+Check digit for 9876543 is 8
+1234562 is invalid
+98765434 is invalid
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -225,9 +292,48 @@ window.onload = wrap_img;
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AdditionPatternTester</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">AdditionPattern</span> <span class="n">pattern</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AdditionPattern</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Current number: "</span> <span class="o">+</span> <span class="n">pattern</span><span class="p">.</span><span class="na">currentNumber</span><span class="p">());</span> <span class="c1">// Expected output: 0</span>
+        
+        <span class="n">pattern</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Current number: "</span> <span class="o">+</span> <span class="n">pattern</span><span class="p">.</span><span class="na">currentNumber</span><span class="p">());</span> <span class="c1">// Expected output: 2</span>
+        
+        <span class="n">pattern</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Current number: "</span> <span class="o">+</span> <span class="n">pattern</span><span class="p">.</span><span class="na">currentNumber</span><span class="p">());</span> <span class="c1">// Expected output: 4</span>
+        
+        <span class="n">pattern</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Current number: "</span> <span class="o">+</span> <span class="n">pattern</span><span class="p">.</span><span class="na">currentNumber</span><span class="p">());</span> <span class="c1">// Expected output: 6</span>
+        
+        <span class="n">pattern</span><span class="p">.</span><span class="na">prev</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Current number: "</span> <span class="o">+</span> <span class="n">pattern</span><span class="p">.</span><span class="na">currentNumber</span><span class="p">());</span> <span class="c1">// Expected output: 4</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">AdditionPatternTester</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Current number: 0
+Current number: 2
+Current number: 4
+Current number: 6
+Current number: 4
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -250,37 +356,141 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="c1">////////////////////          Part A          \\\\\\\\\\\\\\\\\\\\</span>
-<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">addRepair</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">CarRepair</span> <span class="n">repair</span> <span class="p">:</span> <span class="n">schedule</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">repair</span><span class="p">.</span><span class="na">getMechanicNum</span><span class="p">()</span> <span class="o">==</span> <span class="n">m</span> <span class="o">||</span> <span class="n">repair</span><span class="p">.</span><span class="na">getBayNum</span><span class="p">()</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="n">schedule</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">CarRepair</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">b</span><span class="p">));</span>
-    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-<span class="p">}</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span>
 
-<span class="c1">////////////////////          Part B          \\\\\\\\\\\\\\\\\\\\</span>
-<span class="kd">public</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">availableMechanics</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">availableMechanics</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// iterate over all mechanic numbers</span>
-        <span class="kt">boolean</span> <span class="n">isAvailable</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="n">CarRepair</span> <span class="n">repair</span> <span class="p">:</span> <span class="n">schedule</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// iterate over all repairs in schedule</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">repair</span><span class="p">.</span><span class="na">getMechanicNum</span><span class="p">()</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// if the mechanic is already assigned to a repair</span>
-                <span class="n">isAvailable</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-                <span class="k">break</span><span class="p">;</span> <span class="c1">// exit inner loop as soon as a mechanic is found to be busy</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RepairSchedule</span> <span class="p">{</span>
+    <span class="cm">/** Each element represents a repair by an individual mechanic in a bay. */</span>
+    <span class="kd">private</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">CarRepair</span><span class="o">&gt;</span> <span class="n">schedule</span><span class="p">;</span>
+
+    <span class="cm">/** Number of mechanics available in this schedule. */</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">numberOfMechanics</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">mechanicNum</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">bayNum</span><span class="p">;</span>
+
+    <span class="cm">/** Constructs a RepairSchedule object.</span>
+<span class="cm">     * Precondition: n &gt;= 0</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="nf">RepairSchedule</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">schedule</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">CarRepair</span><span class="o">&gt;</span><span class="p">();</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">numberOfMechanics</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">mechanicNum</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">bayNum</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getMechanicNum</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">mechanicNum</span><span class="p">;</span>
+    <span class="p">}</span>
+    
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getBayNum</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">bayNum</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cm">/** Attempts to schedule a repair by a given mechanic in a given bay as described in part (a).</span>
+<span class="cm">     * Precondition: 0 &lt;= m &lt; numberOfMechanics and b &gt;= 0</span>
+<span class="cm">     */</span>
+    <span class="c1">////////////////////          Part A          \\\\\\\\\\\\\\\\\\\\</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">addRepair</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">CarRepair</span> <span class="n">repair</span> <span class="p">:</span> <span class="n">schedule</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">repair</span><span class="p">.</span><span class="na">getMechanicNum</span><span class="p">()</span> <span class="o">==</span> <span class="n">m</span> <span class="o">||</span> <span class="n">repair</span><span class="p">.</span><span class="na">getBayNum</span><span class="p">()</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
             <span class="p">}</span>
         <span class="p">}</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">isAvailable</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">availableMechanics</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">i</span><span class="p">);</span> <span class="c1">// add the available mechanic to the list</span>
+        <span class="n">schedule</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">CarRepair</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">b</span><span class="p">));</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="cm">/** Returns an ArrayList containing the mechanic identifiers of all available mechanics,</span>
+<span class="cm">     * as described in part (b).</span>
+<span class="cm">     */</span>
+    <span class="c1">////////////////////          Part B          \\\\\\\\\\\\\\\\\\\\</span>
+    <span class="kd">public</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="nf">availableMechanics</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">availableMechanics</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// iterate over all mechanic numbers</span>
+            <span class="kt">boolean</span> <span class="n">isAvailable</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">CarRepair</span> <span class="n">repair</span> <span class="p">:</span> <span class="n">schedule</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// iterate over all repairs in schedule</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">repair</span><span class="p">.</span><span class="na">getMechanicNum</span><span class="p">()</span> <span class="o">==</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// if the mechanic is already assigned to a repair</span>
+                    <span class="n">isAvailable</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span> <span class="c1">// exit inner loop as soon as a mechanic is found to be busy</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">isAvailable</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">availableMechanics</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">i</span><span class="p">);</span> <span class="c1">// add the available mechanic to the list</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">availableMechanics</span><span class="p">;</span> <span class="c1">// return the list of available mechanics</span>
+    <span class="p">}</span>
+
+    <span class="cm">/** Removes an element from schedule when a repair is complete. */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">carOut</span><span class="p">(</span><span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">schedule</span><span class="p">.</span><span class="na">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">schedule</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="na">getBayNum</span><span class="p">()</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">schedule</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+                <span class="k">break</span><span class="p">;</span>
+            <span class="p">}</span>
         <span class="p">}</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="n">availableMechanics</span><span class="p">;</span> <span class="c1">// return the list of available mechanics</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// Create a new repair schedule with 3 mechanics</span>
+        <span class="n">RepairSchedule</span> <span class="n">schedule</span> <span class="o">=</span> <span class="k">new</span> <span class="n">RepairSchedule</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+    
+        <span class="c1">// Add some repairs to the schedule</span>
+        <span class="n">schedule</span><span class="p">.</span><span class="na">addRepair</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">schedule</span><span class="p">.</span><span class="na">addRepair</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="n">schedule</span><span class="p">.</span><span class="na">addRepair</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+        <span class="n">schedule</span><span class="p">.</span><span class="na">addRepair</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+        <span class="n">schedule</span><span class="p">.</span><span class="na">addRepair</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+    
+        <span class="c1">// Print out the schedule</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Current schedule:"</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">CarRepair</span> <span class="n">repair</span> <span class="p">:</span> <span class="n">schedule</span><span class="p">.</span><span class="na">schedule</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">repair</span><span class="p">.</span><span class="na">getMechanicNum</span><span class="p">()</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">repair</span><span class="p">.</span><span class="na">getBayNum</span><span class="p">());</span>
+        <span class="p">}</span>
+    
+        <span class="c1">// Print out the available mechanics</span>
+        <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">availableMechanics</span> <span class="o">=</span> <span class="n">schedule</span><span class="p">.</span><span class="na">availableMechanics</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Available mechanics:"</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">:</span> <span class="n">availableMechanics</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="s">" "</span><span class="p">);</span>
+        <span class="p">}</span>
+    
+        <span class="c1">// Mark a repair as complete</span>
+        <span class="n">schedule</span><span class="p">.</span><span class="na">carOut</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+    
+        <span class="c1">// Print out the updated schedule</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"\nUpdated schedule:"</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">CarRepair</span> <span class="n">repair</span> <span class="p">:</span> <span class="n">schedule</span><span class="p">.</span><span class="na">schedule</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">repair</span><span class="p">.</span><span class="na">getMechanicNum</span><span class="p">()</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">repair</span><span class="p">.</span><span class="na">getBayNum</span><span class="p">());</span>
+        <span class="p">}</span>
+    <span class="p">}</span>    
 <span class="p">}</span>
+
+<span class="n">RepairSchedule</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Current schedule:
+0 0
+1 1
+2 2
+Available mechanics:
+3 4 5 
+Updated schedule:
+0 0
+2 2
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -303,43 +513,116 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="c1">////////////////////          Part A          \\\\\\\\\\\\\\\\\\\\</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isNonZeroRow</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">array2D</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="n">array2D</span><span class="o">[</span><span class="n">r</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">col</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">array2D</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ArrayResizer</span> <span class="p">{</span>
+    <span class="c1">////////////////////          Part A          \\\\\\\\\\\\\\\\\\\\</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isNonZeroRow</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">array2D</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">col</span> <span class="o">&lt;</span> <span class="n">array2D</span><span class="o">[</span><span class="n">r</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">col</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">array2D</span><span class="o">[</span><span class="n">r</span><span class="o">][</span><span class="n">col</span><span class="o">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">numNonZeroRows</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">array2D</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array2D</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">isNonZeroRow</span><span class="p">(</span><span class="n">array2D</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span> <span class="p">{</span>
+                <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
+    <span class="p">}</span>    
+
+    <span class="c1">////////////////////          Part B          \\\\\\\\\\\\\\\\\\\\</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[][]</span> <span class="nf">resize</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">array2D</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// count the number of non-zero rows in the original array</span>
+        <span class="kt">int</span> <span class="n">numNonZeroRows</span> <span class="o">=</span> <span class="n">numNonZeroRows</span><span class="p">(</span><span class="n">array2D</span><span class="p">);</span>
+        
+        <span class="c1">// create a new 2D array with the same number of columns as the original array</span>
+        <span class="c1">// and the number of rows equal to the count of non-zero rows</span>
+        <span class="kt">int</span><span class="o">[][]</span> <span class="n">resizedArray</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">numNonZeroRows</span><span class="o">][</span><span class="n">array2D</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="o">]</span><span class="p">;</span>
+        
+        <span class="c1">// iterate over each row in the original array</span>
+        <span class="c1">// if it is a non-zero row, copy it to the new array</span>
+        <span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array2D</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">isNonZeroRow</span><span class="p">(</span><span class="n">array2D</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span> <span class="p">{</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">array2D</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">resizedArray</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">array2D</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="n">row</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        
+        <span class="c1">// return the new array</span>
+        <span class="k">return</span> <span class="n">resizedArray</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span><span class="o">[][]</span> <span class="n">array</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+            <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">},</span>
+            <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">},</span>
+            <span class="p">{</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">},</span>
+            <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">}</span>
+        <span class="p">};</span>
+
+        <span class="c1">// test isNonZeroRow</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">isNonZeroRow</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span> <span class="c1">// false</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">isNonZeroRow</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span> <span class="c1">// true</span>
+
+        <span class="c1">// test resize</span>
+        <span class="kt">int</span><span class="o">[][]</span> <span class="n">resizedArray</span> <span class="o">=</span> <span class="n">resize</span><span class="p">(</span><span class="n">array</span><span class="p">);</span>
+
+        <span class="c1">// print original array</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Original array:"</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">row</span> <span class="p">:</span> <span class="n">array</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">val</span> <span class="p">:</span> <span class="n">row</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">val</span> <span class="o">+</span> <span class="s">" "</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="c1">// print resized array</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Resized array:"</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">row</span> <span class="p">:</span> <span class="n">resizedArray</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">val</span> <span class="p">:</span> <span class="n">row</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">val</span> <span class="o">+</span> <span class="s">" "</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
         <span class="p">}</span>
     <span class="p">}</span>
-    <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="c1">////////////////////          Part B          \\\\\\\\\\\\\\\\\\\\</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[][]</span> <span class="nf">resize</span><span class="p">(</span><span class="kt">int</span><span class="o">[][]</span> <span class="n">array2D</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// count the number of non-zero rows in the original array</span>
-    <span class="kt">int</span> <span class="n">numNonZeroRows</span> <span class="o">=</span> <span class="n">numNonZeroRows</span><span class="p">(</span><span class="n">array2D</span><span class="p">);</span>
-    
-    <span class="c1">// create a new 2D array with the same number of columns as the original array</span>
-    <span class="c1">// and the number of rows equal to the count of non-zero rows</span>
-    <span class="kt">int</span><span class="o">[][]</span> <span class="n">resizedArray</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">numNonZeroRows</span><span class="o">][</span><span class="n">array2D</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="o">]</span><span class="p">;</span>
-    
-    <span class="c1">// iterate over each row in the original array</span>
-    <span class="c1">// if it is a non-zero row, copy it to the new array</span>
-    <span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array2D</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">isNonZeroRow</span><span class="p">(</span><span class="n">array2D</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span> <span class="p">{</span>
-            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">array2D</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-                <span class="n">resizedArray</span><span class="o">[</span><span class="n">row</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">array2D</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="n">row</span><span class="o">++</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    
-    <span class="c1">// return the new array</span>
-    <span class="k">return</span> <span class="n">resizedArray</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="n">ArrayResizer</span><span class="p">.</span><span class="na">main</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>false
+true
+Original array:
+0 0 0 
+1 2 3 
+0 0 0 
+4 5 6 
+0 0 0 
+Resized array:
+1 2 3 
+4 5 6 
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
