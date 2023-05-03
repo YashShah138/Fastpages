@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      7 min read
+      8 min read
     
 </span></p>
 
@@ -179,20 +179,48 @@ window.onload = wrap_img;
         <span class="k">return</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
     <span class="p">}</span>
 
+    <span class="cm">/**</span>
+<span class="cm">     * Multiply the first digit by 7,</span>
+<span class="cm">     *   the second digit (if one exists) by 6,</span>
+<span class="cm">     *   the third digit (if one exists) by 5, and so on.</span>
+<span class="cm">     *   The length of the method's int parameter is at most six; therefore, the last digit of a six-digit number will be multiplied by 2.</span>
+<span class="cm">     * </span>
+<span class="cm">     * Add the products calculated in the previous step.</span>
+<span class="cm">     * </span>
+<span class="cm">     * Extract the check digit, which is the rightmost digit of the sum calculated in the previous step.</span>
+<span class="cm">     * </span>
+<span class="cm">     * (2x7)+(8x6)+(3x5)+(4x4)+(1x3)+(5x2) = </span>
+<span class="cm">     * 14+48+15+16+3+10 = </span>
+<span class="cm">     * 106</span>
+<span class="cm">     */</span>
+
     <span class="c1">////////////////////          Part A          \\\\\\\\\\\\\\\\\\\\</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getCheck</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">numDigits</span> <span class="o">=</span> <span class="n">getNumberOfDigits</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
-
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">numDigits</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kt">int</span> <span class="n">factor</span> <span class="o">=</span> <span class="n">numDigits</span> <span class="o">-</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">;</span>
-            <span class="n">sum</span> <span class="o">+=</span> <span class="n">factor</span> <span class="o">*</span> <span class="n">getDigit</span><span class="p">(</span><span class="n">num</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">multiplier</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+        
+        <span class="k">while</span> <span class="p">(</span><span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">digit</span> <span class="o">=</span> <span class="n">num</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="n">digit</span> <span class="o">*</span> <span class="n">multiplier</span><span class="p">;</span>
+            <span class="n">multiplier</span><span class="o">--</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">multiplier</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">multiplier</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="n">num</span> <span class="o">/=</span> <span class="mi">10</span><span class="p">;</span>
         <span class="p">}</span>
-
+        
         <span class="kt">int</span> <span class="n">checkDigit</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">%</span> <span class="mi">10</span><span class="p">;</span>
         <span class="k">return</span> <span class="n">checkDigit</span><span class="p">;</span>
-    <span class="p">}</span>
+    <span class="p">}</span>    
 
+    <span class="cm">/**</span>
+<span class="cm">     * The method returns true if its parameter numWithCheckDigit, which represents a number containing a check digit, is valid, and false otherwise.</span>
+<span class="cm">     * The check digit is always the rightmost digit of numWithCheckDigit</span>
+<span class="cm">     * </span>
+<span class="cm">     * Returns true if numWithCheckDigit is valid, or false otherwise, as described in part (b).</span>
+<span class="cm">     * Precondition: The number of digits in numWithCheckDigit is between two and seven, inclusive.</span>
+<span class="cm">     * numWithCheckDigit &gt;= 0</span>
+<span class="cm">     */</span>
     <span class="c1">////////////////////          Part B          \\\\\\\\\\\\\\\\\\\\</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">isValid</span><span class="p">(</span><span class="kt">int</span> <span class="n">numWithCheckDigit</span><span class="p">)</span> <span class="p">{</span>
         <span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">numWithCheckDigit</span> <span class="o">/</span> <span class="mi">10</span><span class="p">;</span> <span class="c1">// Get rid of the check digit</span>
@@ -201,26 +229,26 @@ window.onload = wrap_img;
         <span class="k">return</span> <span class="n">getCheck</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="o">==</span> <span class="n">checkDigit</span><span class="p">;</span> <span class="c1">// Check if the computed check digit matches the given check digit</span>
     <span class="p">}</span>    
     
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">num1</span> <span class="o">=</span> <span class="mi">123456</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>        
+        <span class="kt">int</span> <span class="n">num1</span> <span class="o">=</span> <span class="mi">283415</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">check1</span> <span class="o">=</span> <span class="n">getCheck</span><span class="p">(</span><span class="n">num1</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Check digit for "</span> <span class="o">+</span> <span class="n">num1</span> <span class="o">+</span> <span class="s">" is "</span> <span class="o">+</span> <span class="n">check1</span><span class="p">);</span>
         <span class="c1">// expected output: "Check digit for 123456 is 2"</span>
     
-        <span class="kt">int</span> <span class="n">num2</span> <span class="o">=</span> <span class="mi">9876543</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">num2</span> <span class="o">=</span> <span class="mi">159</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">check2</span> <span class="o">=</span> <span class="n">getCheck</span><span class="p">(</span><span class="n">num2</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Check digit for "</span> <span class="o">+</span> <span class="n">num2</span> <span class="o">+</span> <span class="s">" is "</span> <span class="o">+</span> <span class="n">check2</span><span class="p">);</span>
         <span class="c1">// expected output: "Check digit for 9876543 is 4"</span>
     
-        <span class="kt">int</span> <span class="n">numWithCheck1</span> <span class="o">=</span> <span class="mi">1234562</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">numWithCheck1</span> <span class="o">=</span> <span class="mi">123455</span><span class="p">;</span>
         <span class="kt">boolean</span> <span class="n">isValid1</span> <span class="o">=</span> <span class="n">isValid</span><span class="p">(</span><span class="n">numWithCheck1</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">numWithCheck1</span> <span class="o">+</span> <span class="s">" is "</span> <span class="o">+</span> <span class="p">(</span><span class="n">isValid1</span> <span class="o">?</span> <span class="s">"valid"</span> <span class="p">:</span> <span class="s">"invalid"</span><span class="p">));</span>
-        <span class="c1">// expected output: "1234562 is invalid"</span>
+        <span class="c1">// expected output: "123455 is invalid"</span>
     
-        <span class="kt">int</span> <span class="n">numWithCheck2</span> <span class="o">=</span> <span class="mi">98765434</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">numWithCheck2</span> <span class="o">=</span> <span class="mi">111119</span><span class="p">;</span>
         <span class="kt">boolean</span> <span class="n">isValid2</span> <span class="o">=</span> <span class="n">isValid</span><span class="p">(</span><span class="n">numWithCheck2</span><span class="p">);</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">numWithCheck2</span> <span class="o">+</span> <span class="s">" is "</span> <span class="o">+</span> <span class="p">(</span><span class="n">isValid2</span> <span class="o">?</span> <span class="s">"valid"</span> <span class="p">:</span> <span class="s">"invalid"</span><span class="p">));</span>
-        <span class="c1">// expected output: "98765434 is invalid"</span>
+        <span class="c1">// expected output: "111119 is invalid"</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
@@ -237,10 +265,10 @@ window.onload = wrap_img;
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Check digit for 123456 is 7
-Check digit for 9876543 is 8
-1234562 is invalid
-98765434 is invalid
+<pre>Check digit for 283415 is 1
+Check digit for 159 is 8
+123455 is valid
+111119 is invalid
 </pre>
 </div>
 </div>
@@ -267,7 +295,18 @@ Check digit for 9876543 is 8
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-java"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AdditionPattern</span> <span class="p">{</span>
+<div class=" highlight hl-java"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * This question involves the implementation of the AdditionPattern class, which generates a number pattern. The AdditionPattern object is constructed with two positive integer parameters, as described below.</span>
+<span class="cm"> *   The first positive integer parameter indicates the starting number in the pattern.</span>
+<span class="cm"> *   The second positive integer parameter indicates the value that is to be added to obtain each subsequent number in the pattern.</span>
+<span class="cm"> * </span>
+<span class="cm"> * The AdditionPattern class also supports the following methods.</span>
+<span class="cm"> *   currentNumber ===&gt; returns current number</span>
+<span class="cm"> *        next     ===&gt; returns next number in the pattern</span>
+<span class="cm"> *        prev     ===&gt; returns the previous number in the pattern</span>
+<span class="cm"> */</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AdditionPattern</span> <span class="p">{</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">current</span><span class="p">;</span>
     <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">start</span><span class="p">;</span>
     <span class="kd">private</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">increment</span><span class="p">;</span>
@@ -295,20 +334,20 @@ Check digit for 9876543 is 8
 
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">AdditionPatternTester</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">AdditionPattern</span> <span class="n">pattern</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AdditionPattern</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Current number: "</span> <span class="o">+</span> <span class="n">pattern</span><span class="p">.</span><span class="na">currentNumber</span><span class="p">());</span> <span class="c1">// Expected output: 0</span>
+        <span class="n">AdditionPattern</span> <span class="n">pattern</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AdditionPattern</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Current number: "</span> <span class="o">+</span> <span class="n">pattern</span><span class="p">.</span><span class="na">currentNumber</span><span class="p">());</span> <span class="c1">// Expected output: 3</span>
         
         <span class="n">pattern</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Current number: "</span> <span class="o">+</span> <span class="n">pattern</span><span class="p">.</span><span class="na">currentNumber</span><span class="p">());</span> <span class="c1">// Expected output: 2</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Current number: "</span> <span class="o">+</span> <span class="n">pattern</span><span class="p">.</span><span class="na">currentNumber</span><span class="p">());</span> <span class="c1">// Expected output: 10</span>
         
         <span class="n">pattern</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Current number: "</span> <span class="o">+</span> <span class="n">pattern</span><span class="p">.</span><span class="na">currentNumber</span><span class="p">());</span> <span class="c1">// Expected output: 4</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Current number: "</span> <span class="o">+</span> <span class="n">pattern</span><span class="p">.</span><span class="na">currentNumber</span><span class="p">());</span> <span class="c1">// Expected output: 17</span>
         
         <span class="n">pattern</span><span class="p">.</span><span class="na">next</span><span class="p">();</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Current number: "</span> <span class="o">+</span> <span class="n">pattern</span><span class="p">.</span><span class="na">currentNumber</span><span class="p">());</span> <span class="c1">// Expected output: 6</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Current number: "</span> <span class="o">+</span> <span class="n">pattern</span><span class="p">.</span><span class="na">currentNumber</span><span class="p">());</span> <span class="c1">// Expected output: 24</span>
         
         <span class="n">pattern</span><span class="p">.</span><span class="na">prev</span><span class="p">();</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Current number: "</span> <span class="o">+</span> <span class="n">pattern</span><span class="p">.</span><span class="na">currentNumber</span><span class="p">());</span> <span class="c1">// Expected output: 4</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"Current number: "</span> <span class="o">+</span> <span class="n">pattern</span><span class="p">.</span><span class="na">currentNumber</span><span class="p">());</span> <span class="c1">// Expected output: 17</span>
     <span class="p">}</span>
 <span class="p">}</span>
 
@@ -325,11 +364,11 @@ Check digit for 9876543 is 8
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Current number: 0
-Current number: 2
-Current number: 4
-Current number: 6
-Current number: 4
+<pre>Current number: 3
+Current number: 10
+Current number: 17
+Current number: 24
+Current number: 17
 </pre>
 </div>
 </div>
