@@ -16,7 +16,7 @@ GEM
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
     execjs (2.8.1)
-    faraday (0.17.5)
+    faraday (0.17.6)
       multipart-post (>= 1.2, < 3)
     ffi (1.15.5)
     forwardable-extended (2.6.0)
@@ -93,7 +93,7 @@ GEM
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
     minitest (5.16.3)
-    multipart-post (2.2.3)
+    multipart-post (2.3.0)
     nokogiri (1.13.8)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
@@ -128,14 +128,6 @@ GEM
     wdm (0.1.1)
     webrick (1.8.1)
     zeitwerk (2.6.0)
-    faraday (1.10.0)
-      faraday-em_http (~> 1.0)
-      faraday-em_synchrony (~> 1.0)
-      faraday-excon (~> 1.1)
-      faraday-httpclient (~> 1.0)
-      faraday-multipart (~> 1.0.4)
-    faraday-multipart (1.0.3)
-      multipart-post (>= 1.2, < 3)
 
 PLATFORMS
   ruby
@@ -162,4 +154,4 @@ DEPENDENCIES
   webrick
 
 BUNDLED WITH
-   2.1.4
+   2.4.13
